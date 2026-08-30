@@ -1,0 +1,44 @@
+\section{Análisis}
+
+Presentar los datos con unidades, incertidumbres y cifras significativas. Explicar el procesamiento realizado: promedios, desviaciones, ajuste de curvas, propagación de incertidumbre y comparación cuantitativa con el modelo físico.
+
+\subsection{Datos experimentales}
+
+\input{tables/datos_experimentales}
+
+\subsection{Procesamiento e incertidumbre}
+
+Indicar las ecuaciones usadas para obtener los resultados derivados. Si se propagaron incertidumbres, escribir la expresión general y aplicarla a las variables medidas.
+
+\begin{equation}
+    \Delta f =
+    \sqrt{
+    \left(\frac{\partial f}{\partial x}\Delta x\right)^2 +
+    \left(\frac{\partial f}{\partial y}\Delta y\right)^2
+    }
+    \label{eq:propagacion}
+\end{equation}
+
+\subsection{Gráficas y ajuste}
+
+Insertar la gráfica experimental con barras de error y el ajuste correspondiente. Interpretar físicamente la pendiente, el intercepto y el coeficiente de determinación cuando aplique.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.42\textwidth]{unnamed.jpg}
+\caption{Gráfica preliminar. Reemplazar por la gráfica de datos experimentales con ajuste e incertidumbres.}
+\label{fig:grafica}
+\end{figure}
+
+\subsection{Comparación con el modelo físico}
+
+Comparar el valor experimental con el valor teórico o bibliográfico. Reportar diferencia absoluta, diferencia porcentual o error relativo, según corresponda.
+
+\begin{equation}
+    \%\ \text{error} =
+    \left|
+    \frac{\text{valor experimental} - \text{valor teórico}}
+    {\text{valor teórico}}
+    \right| \times 100
+    \label{eq:error_porcentual}
+\end{equation}
