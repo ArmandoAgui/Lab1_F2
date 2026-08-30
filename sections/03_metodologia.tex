@@ -1,5 +1,13 @@
 \section{Metodología}
 
+% Formato IEEE de subsecciones y leyendas, limitado a esta sección.
+\begingroup
+\makeatletter
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\def\thesubsectiondis{\Alph{subsection}.}
+\renewcommand{\figurename}{Fig.}
+\makeatother
+
 \subsection{Determinación experimental de la densidad mediante el principio de Arquímedes}
 
 Para estudiar el empuje ejercido por el agua sobre una varilla parcialmente sumergida, se utilizó una balanza de brazo triple, un beaker de \SI{500}{\milli\liter} con agua, una varilla, soportes, una regla y un pie de rey. La balanza presentó una incertidumbre de $\pm\SI{0.05}{\gram}$; la regla y el pie de rey presentaron incertidumbres de $\pm\SI{0.05}{\centi\meter}$.
@@ -13,7 +21,7 @@ El montaje experimental empleado para la determinación del empuje se muestra en
     \label{fig:arquimedes}
 \end{figure}
 
-Inicialmente, se colocó el beaker con agua sobre la balanza y se equilibró el sistema sin sumergir la varilla. Esta lectura se tomó como referencia para la medición posterior de las variaciones de masa aparente. Luego, se fijó la varilla mediante los soportes y se sumergió progresivamente en el agua, comenzando con una longitud aproximada de \SI{1}{\centi\meter}. Para cada posición se midieron y registraron la longitud sumergida $L$, la lectura de la balanza y la \textit{Diferencia} entre dicha lectura y la lectura de referencia. La incertidumbre de la lectura de la balanza fue $\pm\SI{0.05}{\gram}$ y la incertidumbre de la \textit{Diferencia} fue $\pm\SI{0.10}{\gram}$. Se efectuaron diez mediciones correspondientes a diferentes valores de longitud sumergida $L$, procurando mantener el montaje estable y evitar el contacto de la varilla con las paredes o el fondo del beaker.
+Inicialmente, se colocó el beaker con agua sobre la balanza y se equilibró el sistema sin sumergir la varilla. Esta lectura se tomó como referencia para determinar posteriormente las variaciones en la lectura de la balanza. Luego, se fijó la varilla mediante los soportes y se sumergió progresivamente en el agua, comenzando con una longitud aproximada de \SI{1}{\centi\meter}. Para cada posición se midieron y registraron la longitud sumergida $L$, la lectura de la balanza y la diferencia entre dicha lectura y la lectura de referencia. La incertidumbre de la lectura de la balanza fue $\pm\SI{0.05}{\gram}$ y la incertidumbre de la diferencia fue $\pm\SI{0.10}{\gram}$. Se efectuaron diez mediciones correspondientes a diferentes valores de longitud sumergida $L$, procurando mantener el montaje estable y evitar el contacto de la varilla con las paredes o el fondo del beaker.
 
 Una vez completadas las mediciones, se retiró la varilla y se determinó su diámetro con el pie de rey, cuya incertidumbre fue $\pm\SI{0.05}{\centi\meter}$. A partir de esta dimensión se obtuvo el área transversal de la varilla. Los datos quedaron organizados para su posterior representación gráfica de la diferencia de lectura en función de $L$; el procesamiento y la interpretación de dicha gráfica se presentan en la sección de análisis.
 
@@ -30,4 +38,6 @@ El montaje utilizado para medir el tiempo de vaciado se presenta en la Fig.~\ref
     \label{fig:torricelli}
 \end{figure}
 
-El recipiente se llenó inicialmente hasta alcanzar $h=\SI{10}{\centi\meter}$, manteniendo el orificio tapado durante el llenado. Al alcanzar la altura establecida, se retiró la obstrucción y se inició simultáneamente el cronómetro cuando comenzó la salida del agua. El cronómetro se detuvo cuando el flujo dejó de salir por el orificio y se registró el tiempo experimental de vaciado $t$. El procedimiento se repitió para cinco alturas iniciales: $h=\SI{10}{\centi\meter}$, $\SI{8}{\centi\meter}$, $\SI{6}{\centi\meter}$, $\SI{4}{\centi\meter}$ y $\SI{2}{\centi\meter}$. En cada repetición se verificó la altura con la regla y se mantuvieron las mismas condiciones geométricas del recipiente y del orificio. Los tiempos teóricos y los errores porcentuales se calcularon posteriormente y se reservaron para la sección de análisis.
+El recipiente se llenó inicialmente hasta alcanzar $h=\SI{10}{\centi\meter}$, manteniendo el orificio tapado durante el llenado. Al alcanzar la altura establecida, se destapó el orificio y se inició el cronómetro en el instante en que comenzó la salida del agua. El cronómetro se detuvo cuando el flujo dejó de salir por el orificio y se registró el tiempo experimental de vaciado $t$. El procedimiento se repitió para cinco alturas iniciales: $h=\SI{10}{\centi\meter}$, $\SI{8}{\centi\meter}$, $\SI{6}{\centi\meter}$, $\SI{4}{\centi\meter}$ y $\SI{2}{\centi\meter}$. En cada repetición se verificó la altura con la regla y se mantuvieron las mismas condiciones geométricas del recipiente y del orificio. Los tiempos teóricos y los errores porcentuales se calcularon posteriormente y se reservaron para la sección de análisis.
+
+\endgroup
