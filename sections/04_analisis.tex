@@ -1,44 +1,309 @@
 \section{Análisis}
 
-Presentar los datos con unidades, incertidumbres y cifras significativas. Explicar el procesamiento realizado: promedios, desviaciones, ajuste de curvas, propagación de incertidumbre y comparación cuantitativa con el modelo físico.
+\subsection{Determinación de la densidad del fluido mediante el principio de Arquímedes}
 
-\subsection{Datos experimentales}
+Para determinar experimentalmente la densidad del agua se midió la diferencia 
+en la lectura de la balanza al sumergir gradualmente una varilla. 
 
-\input{tables/datos_experimentales}
-
-\subsection{Procesamiento e incertidumbre}
-
-Indicar las ecuaciones usadas para obtener los resultados derivados. Si se propagaron incertidumbres, escribir la expresión general y aplicarla a las variables medidas.
+De acuerdo con el principio de Arquímedes, el empuje ejercido por el fluido sobre 
+el cuerpo es igual al peso del fluido desplazado:
 
 \begin{equation}
-    \Delta f =
-    \sqrt{
-    \left(\frac{\partial f}{\partial x}\Delta x\right)^2 +
-    \left(\frac{\partial f}{\partial y}\Delta y\right)^2
-    }
-    \label{eq:propagacion}
+E = \rho_f V_f g.
 \end{equation}
 
-\subsection{Gráficas y ajuste}
+Debido a la tercera ley de Newton, este empuje produce una variación en la lectura de la balanza. 
+Por lo tanto, la diferencia de masa registrada puede relacionarse con 
+el volumen de fluido desplazado mediante 
 
-Insertar la gráfica experimental con barras de error y el ajuste correspondiente. Interpretar físicamente la pendiente, el intercepto y el coeficiente de determinación cuando aplique.
+\begin{equation}
+\Delta m = \rho_f V_f.
+\end{equation}
+
+Como la varilla posee una sección transversal constante, el volumen sumergido se expresa como
+
+\begin{equation}
+V_f = AL
+\end{equation}
+
+donde $A$ es el área transversal de la varilla y $L$ es la longitud sumergida. 
+De esta manera se obtiene la relación lineal
+
+\begin{equation}
+\Delta m = \rho_f A L.
+\end{equation}
+
+Por tanto, al representar la diferencia de masa $\Delta m$ en función de la longitud sumergida $L$, 
+la pendiente del ajuste lineal está dada por
+
+\begin{equation}
+k = \rho_f A,
+\end{equation}
+
+de donde la densidad experimental puede calcularse mediante
+
+\begin{equation}
+\rho_f = \frac{k}{A}.
+\end{equation}
+
+Los datos experimentales obtenidos se presentan en la Tabla~\ref{tab:datos_arq}.
+
+\begin{table}[htbp]
+\centering
+\caption{Mediciones de la longitud sumergida y diferencia de masa registrada por la balanza.}
+\label{tab:datos_arq}
+\begin{tabular}{ccc}
+\hline
+$Longitud_medida$ (cm) & Lectura de balanza (g) & $\Delta m$ (g) \\
+\hline
+$0.00$ & $435.60 \pm 0.05$ & $0.00$ \\
+$1.00 \pm 0.05$ & $437.00 \pm 0.05$ & $1.50 \pm 0.10$ \\
+$2.00 \pm 0.05$ & $438.60 \pm 0.05$ & $3.10 \pm 0.10$ \\
+$3.00 \pm 0.05$ & $439.80 \pm 0.05$ & $4.30 \pm 0.10$ \\
+$4.00 \pm 0.05$ & $440.00 \pm 0.05$ & $4.50 \pm 0.10$ \\
+$5.00 \pm 0.05$ & $442.20 \pm 0.05$ & $6.70 \pm 0.10$ \\
+$6.00 \pm 0.05$ & $443.20 \pm 0.05$ & $7.70 \pm 0.10$ \\
+$7.00 \pm 0.05$ & $444.40 \pm 0.05$ & $8.90 \pm 0.10$ \\
+$8.00 \pm 0.05$ & $446.00 \pm 0.05$ & $10.50 \pm 0.10$ \\
+$9.00 \pm 0.05$ & $447.20 \pm 0.05$ & $11.70 \pm 0.10$ \\
+$10.00 \pm 0.05$ & $448.50 \pm 0.05$ & $13.00 \pm 0.10$ \\
+\hline
+\end{tabular}
+\end{table}
+
+El diámetro de la varilla se midió como
+
+\begin{equation}
+D=(1.275\pm0.005)\,\mathrm{cm}.
+\end{equation}
+
+A partir de este valor, el área transversal se calculó mediante
+
+\begin{equation}
+A=\frac{\pi D^2}{4},
+\end{equation}
+
+obteniéndose
+
+\begin{equation}
+A=(1.277\pm0.010)\,\mathrm{cm^2}.
+\end{equation}
+
+La incertidumbre del área se obtuvo mediante propagación de incertidumbres:
+
+\begin{equation}
+\frac{\Delta A}{A}
+=
+2\frac{\Delta D}{D}.
+\end{equation}
+
+La gráfica de la diferencia de masa en función de la longitud sumergida se muestra en la Figura~\ref{fig:arquimedes}. 
+El ajuste lineal obtenido fue
+
+\begin{equation}
+\Delta m =
+(1.266\pm0.011)L
++
+(0.227\pm0.068),
+\end{equation}
+
+con un coeficiente de determinación
+
+\begin{equation}
+R^2=0.9930.
+\end{equation}
+
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.42\textwidth]{unnamed.jpg}
-\caption{Gráfica preliminar. Reemplazar por la gráfica de datos experimentales con ajuste e incertidumbres.}
-\label{fig:grafica}
+\includegraphics[width=0.85\linewidth]{images/Grafico_lab1.jpeg}
+\caption{Diferencia de masa en función de la longitud sumergida. Se muestra el ajuste lineal obtenido a partir de los datos experimentales.}
+\label{fig:arquímides}
 \end{figure}
 
-\subsection{Comparación con el modelo físico}
+El valor de $R^2=0.9930$ indica una fuerte relación lineal entre la longitud sumergida y la diferencia de masa. 
+Esto concuerda con el modelo establecido por el principio de Arquímedes, 
+ya que para una varilla de sección transversal constante el volumen desplazado aumenta directamente con la profundidad de inmersión.
 
-Comparar el valor experimental con el valor teórico o bibliográfico. Reportar diferencia absoluta, diferencia porcentual o error relativo, según corresponda.
+Utilizando la pendiente obtenida experimentalmente, la densidad del fluido resulta
 
 \begin{equation}
-    \%\ \text{error} =
-    \left|
-    \frac{\text{valor experimental} - \text{valor teórico}}
-    {\text{valor teórico}}
-    \right| \times 100
-    \label{eq:error_porcentual}
+\rho_f=
+\frac{1.266\,\mathrm{g/cm}}
+{1.277\,\mathrm{cm^2}}
+=
+0.991\,\mathrm{g/cm^3}.
 \end{equation}
+
+Para determinar la incertidumbre de la densidad se aplicó propagación de incertidumbres para un cociente:
+
+\begin{equation}
+\Delta \rho_f
+=
+\rho_f
+\sqrt{
+\left(\frac{\Delta k}{k}\right)^2+
+\left(\frac{\Delta A}{A}\right)^2
+}.
+\end{equation}
+
+Sustituyendo los valores experimentales:
+
+\begin{equation}
+\Delta \rho_f
+=
+0.991
+\sqrt{
+\left(\frac{0.011}{1.266}\right)^2+
+\left(\frac{0.010}{1.277}\right)^2
+},
+\end{equation}
+
+por lo que
+
+\begin{equation}
+\boxed{
+\rho_f=(0.991\pm0.012)\,\mathrm{g/cm^3}
+}.
+\end{equation}
+
+Tomando como referencia para el agua una densidad de
+$1.00\,\mathrm{g/cm^3}$, el error porcentual se calculó mediante
+
+\begin{equation}
+\%\,\mathrm{error}
+=
+\left|
+\frac{\rho_{\mathrm{exp}}-\rho_{\mathrm{ref}}}
+{\rho_{\mathrm{ref}}}
+\right|100,
+\end{equation}
+
+obteniéndose
+
+\begin{equation}
+\%\,\mathrm{error}
+=
+\left|
+\frac{0.991-1.00}{1.00}
+\right|100
+\approx 0.86\%.
+\end{equation}
+
+La incertidumbre relativa de la densidad es
+
+\begin{equation}
+\frac{\Delta\rho_f}{\rho_f}100
+\approx1.17\%.
+\end{equation}
+
+El intervalo experimental de la densidad es aproximadamente
+
+\begin{equation}
+0.979\,\mathrm{g/cm^3}
+\leq
+\rho_f
+\leq
+1.003\,\mathrm{g/cm^3}.
+\end{equation}
+
+Este intervalo contiene el valor de referencia de $1.00\,\mathrm{g/cm^3}$, 
+por lo que el resultado experimental es compatible con la densidad esperada del agua dentro de la incertidumbre experimental. 
+En consecuencia, los resultados obtenidos proporcionan evidencia experimental a favor del principio de Arquímedes y de la proporcionalidad entre el volumen de fluido desplazado y la profundidad de inmersión para un cuerpo de sección transversal constante.
+
+\subsection{Análisis del vaciado del recipiente mediante el teorema de Torricelli}
+
+Para analizar el vaciado del recipiente se registró el tiempo necesario para que el nivel del agua descendiera desde diferentes alturas iniciales. 
+
+Para el experimento se utilizaron
+
+\begin{equation}
+d_1=0.30\,\mathrm{cm},
+\qquad
+d_2=14.30\,\mathrm{cm}.
+\end{equation}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Tiempos experimentales y teóricos de vaciado del recipiente.}
+\label{tab:torricelli}
+\begin{tabular}{ccccc}
+\hline
+$h$ (cm) & $t$ (s) & $t_v$ (s) & Error (\%) \\
+\hline
+10.00 & 375.32 & 324.59 & 15.64 \\
+8.00 & 355.59 & 290.32 & 22.48 \\
+6.00 & 296.20 & 251.42 & 17.81 \\
+4.00 & 219.11 & 205.29 & 11.60 \\
+2.00 & 136.84 & 145.16 & 5.73 \\
+\hline
+\end{tabular}
+\end{table}
+
+Para un recipiente abierto, el teorema de Torricelli permite expresar la velocidad de salida del fluido como
+
+\begin{equation}
+v=\sqrt{2gh}.
+\end{equation}
+
+Combinando esta expresión con la ecuación de continuidad, el tiempo teórico de vaciado puede escribirse como
+
+\begin{equation}
+t_v=
+\left(\frac{d_2}{d_1}\right)^2
+\sqrt{\frac{2h}{g}},
+\end{equation}
+
+donde $d_1$ corresponde al diámetro del orificio de salida y $d_2$ al diámetro del recipiente. 
+
+De acuerdo con la ecuación anterior, el tiempo de vaciado es proporcional a la raíz cuadrada de la altura inicial:
+
+\begin{equation}
+t_v\propto h^{1/2}.
+\end{equation}
+
+Por lo tanto, el tiempo no presenta una dependencia lineal con la altura. En particular, si la altura inicial aumenta, el tiempo de vaciado aumenta, 
+pero lo hace a una tasa menor que la que tendría una relación directamente proporcional.
+
+Para comprobar el comportamiento de los datos experimentales, se realizó un ajuste de potencia de la forma
+
+\begin{equation}
+t=ah^n.
+\end{equation}
+
+A partir de los cinco valores experimentales se obtuvo
+
+\begin{equation}
+\boxed{
+t=(88.72)h^{0.651}
+}
+\end{equation}
+
+con
+
+\begin{equation}
+R^2=0.9806.
+\end{equation}
+
+La representación gráfica de los datos y del ajuste de potencia se presenta en la Figura~\ref{fig:potencia_torricelli}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{images/grafica_t_vs_h_potencia.png}
+\caption{Tiempo experimental de vaciado en función de la altura inicial. La línea representa el ajuste de potencia $t=(88.72)h^{0.651}$.}
+\label{fig:potencia_torricelli}
+\end{figure}
+
+El exponente experimental obtenido, $n=0.651$, es menor que uno, lo que confirma que la relación entre el tiempo de vaciado y la altura inicial es sublineal. Sin embargo, este valor es mayor que el exponente teórico $n=0.5$ predicho por el teorema de Torricelli. 
+
+Al comparar directamente los tiempos experimentales con los valores calculados mediante el modelo de Torricelli, se observa que el error porcentual fue de $15.64\%$, $22.48\%$, $17.81\%$, $11.60\%$ y $5.73\%$ para alturas de $10$, $8$, $6$, $4$ y $2\,\mathrm{cm}$, respectivamente. El error promedio de estas mediciones es aproximadamente $14.65\%$.
+
+Los resultados muestran que el modelo de Torricelli reproduce adecuadamente la tendencia general de los datos, ya que tanto los valores experimentales como los teóricos indican que el tiempo de vaciado aumenta con la altura inicial de manera no lineal. 
+No obstante, las diferencias entre ambos conjuntos de datos evidencian que el sistema experimental se aleja de las condiciones ideales del modelo.
+
+Entre las posibles fuentes de error se encuentran el tiempo de reacción al utilizar el cronómetro manual, las incertidumbres en la medición de las alturas y diámetros. 
+
+En conjunto, los resultados de esta segunda parte permiten verificar cualitativamente la dependencia sublineal esperada para el tiempo de vaciado. El ajuste experimental $t\propto h^{0.651}$ confirma que el tiempo no es directamente proporcional a $h$, mientras que la diferencia respecto al valor teórico $n=0.5$ evidencia las limitaciones experimentales y las aproximaciones utilizadas en el modelo de Torricelli.
+
+
