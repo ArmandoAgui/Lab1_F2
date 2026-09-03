@@ -1,18 +1,64 @@
-\section{Introducción y marco teórico}
+\section{Marco teórico}
 
-Presentar el fenómeno físico estudiado, los objetivos de la práctica y la hipótesis experimental. Relacionar el experimento con principios físicos relevantes y con fuentes académicas confiables citadas en formato IEEE, por ejemplo \cite{serway2018}.
+\subsection{Principio de Arquímedes}
 
-\subsection{Principios físicos}
-
-Explicar las leyes, aproximaciones y condiciones bajo las cuales el modelo físico es válido. Definir claramente cada variable, sus unidades y su papel dentro del experimento.
+El principio de Arquímedes establece que un cuerpo sumergido total o parcialmente en un fluido experimenta una fuerza de empuje vertical hacia arriba, cuya magnitud es igual al peso del fluido desplazado \cite{serway2018,young2018}:
 
 \begin{equation}
-    y = mx + b
-    \label{eq:modelo_lineal}
+    E = \rho_f V_f g,
+    \label{eq:empuje}
 \end{equation}
 
-En la ecuación \eqref{eq:modelo_lineal}, $m$ representa la pendiente del ajuste, $b$ el intercepto, $x$ la variable independiente y $y$ la variable dependiente. Sustituir este modelo por la ecuación física correspondiente a la práctica.
+donde $E$ es el empuje, $\rho_f$ es la densidad del fluido, $V_f$ es el volumen de fluido desplazado y $g$ es la aceleración de la gravedad.
 
-\subsection{Relación con el experimento}
+En el experimento, una varilla se sumergió progresivamente en un beaker con agua colocado sobre una balanza. El aumento de la lectura de la balanza se atribuyó a la fuerza de reacción, igual y opuesta al empuje ejercido sobre la varilla, de acuerdo con la tercera ley de Newton.
 
-Justificar por qué el montaje y las mediciones realizadas permiten evaluar el modelo teórico. Indicar qué magnitud física se espera obtener a partir de la pendiente, el intercepto, un promedio o una propagación de incertidumbre.
+Si la varilla posee un área transversal constante $A$, el volumen sumergido es $V_f=AL$. Por consiguiente, la diferencia de masa registrada por la balanza puede expresarse como
+
+\begin{equation}
+    \Delta m = (\rho_f A)L,
+    \label{eq:deltam}
+\end{equation}
+
+donde $L$ es la longitud sumergida. La relación entre $\Delta m$ y $L$ es lineal, por lo que la pendiente $k$ del ajuste satisface $k=\rho_f A$. La densidad experimental del fluido se obtiene entonces mediante
+
+\begin{equation}
+    \rho_f = \frac{k}{A}.
+    \label{eq:densidad}
+\end{equation}
+
+Para evaluar la consistencia del modelo, el intercepto del ajuste debe ser cercano a cero, pues un valor apreciable podría indicar la presencia de efectos sistemáticos o una lectura de referencia inadecuada.
+
+\subsection{Ecuación de continuidad y teorema de Torricelli}
+
+El vaciado de un recipiente con agua se describe mediante la ecuación de continuidad y el teorema de Torricelli. Para un fluido incompresible, la conservación del caudal entre el recipiente y el orificio de salida se expresa como
+
+\begin{equation}
+    A_1v_1=A_2v_2,
+    \label{eq:continuidad}
+\end{equation}
+
+donde $A_1$ y $v_1$ son el área y la velocidad en el orificio, mientras que $A_2$ y $v_2$ corresponden al área y la velocidad de descenso del nivel en el recipiente. Esta relación representa la conservación de la masa del fluido \cite{young2018}.
+
+El teorema de Torricelli, obtenido a partir de la ecuación de Bernoulli para un recipiente abierto a la atmósfera, permite calcular la velocidad de salida del agua por el orificio:
+
+\begin{equation}
+    v_1=\sqrt{2gh},
+    \label{eq:torricelli}
+\end{equation}
+
+donde $h$ es la altura del nivel del agua medida desde el centro del orificio. Al combinar las ecuaciones de continuidad y de Torricelli, el tiempo teórico de vaciado puede escribirse en términos de áreas o diámetros como
+
+\begin{equation}
+    t_v=\left(\frac{A_2}{A_1}\right)\sqrt{\frac{2h}{g}}
+    =\left(\frac{d_2}{d_1}\right)^2\sqrt{\frac{2h}{g}},
+    \label{eq:tiempo_vaciado}
+\end{equation}
+
+donde $d_1$ es el diámetro del orificio y $d_2$ es el diámetro del recipiente. Esta expresión permite comparar el tiempo teórico de vaciado con el tiempo medido experimentalmente.
+
+\subsection{Justificación del modelo experimental}
+
+La determinación del empuje mediante la varilla y la balanza permite evaluar la relación entre el volumen de fluido desplazado y la lectura de la balanza. Debido a que el área transversal de la varilla se mantiene constante, se espera que la diferencia de masa aumente proporcionalmente con la longitud sumergida.
+
+El experimento de vaciado permite estudiar la dependencia del tiempo necesario para vaciar el recipiente con respecto a la altura inicial del agua. Las mediciones de $h$ y $t$, junto con los diámetros $d_1$ y $d_2$, permiten comparar el comportamiento observado con el tiempo teórico obtenido mediante las ecuaciones de continuidad y de Torricelli.
