@@ -1,5 +1,7 @@
 \section{Marco teórico}
 
+La práctica tuvo como objetivo determinar experimentalmente la densidad del agua a partir del principio de Arquímedes y contrastar el vaciado de un recipiente con el modelo obtenido mediante continuidad y Torricelli. Se planteó que la diferencia de masa registrada por la balanza sería proporcional a la longitud sumergida y que el tiempo de vaciado presentaría una dependencia sublineal con la altura inicial del agua.
+
 \subsection{Principio de Arquímedes}
 
 El principio de Arquímedes establece que un cuerpo sumergido total o parcialmente en un fluido experimenta una fuerza de empuje vertical hacia arriba, cuya magnitud es igual al peso del fluido desplazado \cite{serway2018,young2018}:
@@ -9,7 +11,7 @@ El principio de Arquímedes establece que un cuerpo sumergido total o parcialmen
     \label{eq:empuje}
 \end{equation}
 
-donde $E$ es el empuje, $\rho_f$ es la densidad del fluido, $V_f$ es el volumen de fluido desplazado y $g$ es la aceleración de la gravedad.
+donde $E$ es el empuje, $\rho_f$ es la densidad del fluido, $V_f$ es el volumen de fluido desplazado y $g$ es la aceleración de la gravedad. En el Sistema Internacional, estas magnitudes se expresan en \si{\newton}, \si{\kilogram\per\cubic\meter}, \si{\cubic\meter} y \si{\meter\per\second\squared}, respectivamente.
 
 En el experimento, una varilla se sumergió progresivamente en un beaker con agua colocado sobre una balanza. El aumento de la lectura de la balanza se atribuyó a la fuerza de reacción, igual y opuesta al empuje ejercido sobre la varilla, de acuerdo con la tercera ley de Newton.
 
@@ -40,7 +42,14 @@ El vaciado de un recipiente con agua se describe mediante la ecuación de contin
 
 donde $A_1$ y $v_1$ son el área y la velocidad en el orificio, mientras que $A_2$ y $v_2$ corresponden al área y la velocidad de descenso del nivel en el recipiente. Esta relación representa la conservación de la masa del fluido \cite{young2018}.
 
-El teorema de Torricelli, obtenido a partir de la ecuación de Bernoulli para un recipiente abierto a la atmósfera, permite calcular la velocidad de salida del agua por el orificio:
+Para un flujo estacionario, incompresible y con pérdidas viscosas despreciables, la ecuación de Bernoulli a lo largo de una línea de corriente se expresa como
+
+\begin{equation}
+    p+\frac{1}{2}\rho_fv^2+\rho_fgy=\text{constante},
+    \label{eq:bernoulli}
+\end{equation}
+
+donde $p$ es la presión, $v$ es la velocidad del fluido y $y$ es la altura. Al considerar que la superficie libre y el orificio están a presión atmosférica, y que la velocidad de descenso de la superficie es pequeña frente a la velocidad de salida, se obtiene el teorema de Torricelli:
 
 \begin{equation}
     v_1=\sqrt{2gh},
@@ -55,7 +64,7 @@ donde $h$ es la altura del nivel del agua medida desde el centro del orificio. A
     \label{eq:tiempo_vaciado}
 \end{equation}
 
-donde $d_1$ es el diámetro del orificio y $d_2$ es el diámetro del recipiente. Esta expresión permite comparar el tiempo teórico de vaciado con el tiempo medido experimentalmente.
+donde $d_1$ es el diámetro del orificio y $d_2$ es el diámetro del recipiente. Para evaluar esta expresión se utilizó $g=\SI{9.81}{\meter\per\second\squared}$ y se convirtió $h$ a metros. Esta expresión permite comparar el tiempo teórico de vaciado con el tiempo medido experimentalmente.
 
 \subsection{Justificación del modelo experimental}
 

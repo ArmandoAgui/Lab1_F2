@@ -54,9 +54,9 @@ Los datos experimentales obtenidos se presentan en la Tabla~\ref{tab:datos_arq}.
 \label{tab:datos_arq}
 \begin{tabular}{ccc}
 \hline
-$Longitud_medida$ (cm) & Lectura de balanza (g) & $\Delta m$ (g) \\
+$L$ (cm) & Lectura de balanza (g) & $\Delta m$ (g) \\
 \hline
-$0.00$ & $435.60 \pm 0.05$ & $0.00$ \\
+$0.00$ & $435.50 \pm 0.05$ & $0.00 \pm 0.10$ \\
 $1.00 \pm 0.05$ & $437.00 \pm 0.05$ & $1.50 \pm 0.10$ \\
 $2.00 \pm 0.05$ & $438.60 \pm 0.05$ & $3.10 \pm 0.10$ \\
 $3.00 \pm 0.05$ & $439.80 \pm 0.05$ & $4.30 \pm 0.10$ \\
@@ -74,7 +74,7 @@ $10.00 \pm 0.05$ & $448.50 \pm 0.05$ & $13.00 \pm 0.10$ \\
 El diámetro de la varilla se midió como
 
 \begin{equation}
-D=(1.275\pm0.005)\,\mathrm{cm}.
+D=(1.275\,\mathrm{cm}\pm0.05\,\mathrm{mm}).
 \end{equation}
 
 A partir de este valor, el área transversal se calculó mediante
@@ -86,7 +86,7 @@ A=\frac{\pi D^2}{4},
 obteniéndose
 
 \begin{equation}
-A=(1.277\pm0.010)\,\mathrm{cm^2}.
+A=(1.277\pm0.100)\,\mathrm{cm^2}.
 \end{equation}
 
 La incertidumbre del área se obtuvo mediante propagación de incertidumbres, siguiendo el procedimiento descrito en \cite{taylor1997}:
@@ -97,7 +97,7 @@ La incertidumbre del área se obtuvo mediante propagación de incertidumbres, si
 2\frac{\Delta D}{D}.
 \end{equation}
 
-La gráfica de la diferencia de masa en función de la longitud sumergida se muestra en la Figura~\ref{fig:arquimedes}. 
+La gráfica de la diferencia de masa en función de la longitud sumergida se muestra en la Fig.~\ref{fig:ajuste_arq}.
 El ajuste lineal obtenido fue
 
 \begin{equation}
@@ -116,9 +116,46 @@ R^2=0.9930.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\linewidth]{images/Grafico_lab1.jpeg}
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth,
+    height=0.68\columnwidth,
+    xlabel={Longitud sumergida, $L$ (cm)},
+    ylabel={Diferencia de masa, $\Delta m$ (g)},
+    xmin=0, xmax=10.5,
+    ymin=0, ymax=14,
+    grid=major,
+    legend style={font=\scriptsize, at={(0.03,0.97)}, anchor=north west},
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize}
+]
+\addplot+[
+    only marks,
+    mark=*,
+    mark size=1.4pt,
+    error bars/.cd,
+    x dir=both, x explicit,
+    y dir=both, y explicit
+] table[row sep=\\, x=L, y=dm, x error=Lerr, y error=dmerr] {
+L dm Lerr dmerr\\
+1 1.5 0.05 0.10\\
+2 3.1 0.05 0.10\\
+3 4.3 0.05 0.10\\
+4 4.5 0.05 0.10\\
+5 6.7 0.05 0.10\\
+6 7.7 0.05 0.10\\
+7 8.9 0.05 0.10\\
+8 10.5 0.05 0.10\\
+9 11.7 0.05 0.10\\
+10 13.0 0.05 0.10\\
+};
+\addlegendentry{Datos experimentales}
+\addplot[red, dashed, domain=0:10, samples=2] {1.266*x + 0.227};
+\addlegendentry{Ajuste lineal}
+\end{axis}
+\end{tikzpicture}
 \caption{Diferencia de masa en función de la longitud sumergida. Se muestra el ajuste lineal obtenido a partir de los datos experimentales.}
-\label{fig:arquímides}
+\label{fig:ajuste_arq}
 \end{figure}
 
 El valor de $R^2=0.9930$ indica una fuerte relación lineal entre la longitud sumergida y la diferencia de masa. 
@@ -155,7 +192,7 @@ Sustituyendo los valores experimentales:
 0.991
 \sqrt{
 \left(\frac{0.011}{1.266}\right)^2+
-\left(\frac{0.010}{1.277}\right)^2
+\left(\frac{0.100}{1.277}\right)^2
 },
 \end{equation}
 
@@ -163,7 +200,7 @@ por lo que
 
 \begin{equation}
 \boxed{
-\rho_f=(0.991\pm0.012)\,\mathrm{g/cm^3}
+\rho_f=(0.991\pm0.078)\,\mathrm{g/cm^3}
 }.
 \end{equation}
 
@@ -176,7 +213,7 @@ $1.00\,\mathrm{g/cm^3}$, el error porcentual se calculó mediante
 \left|
 \frac{\rho_{\mathrm{exp}}-\rho_{\mathrm{ref}}}
 {\rho_{\mathrm{ref}}}
-\right|100,
+\right|\times 100,
 \end{equation}
 
 obteniéndose
@@ -186,25 +223,25 @@ obteniéndose
 =
 \left|
 \frac{0.991-1.00}{1.00}
-\right|100
+\right|\times 100
 \approx 0.86\%.
 \end{equation}
 
 La incertidumbre relativa de la densidad es
 
 \begin{equation}
-\frac{\Delta\rho_f}{\rho_f}100
-\approx1.17\%.
+\frac{\Delta\rho_f}{\rho_f}\times 100
+\approx7.89\%.
 \end{equation}
 
 El intervalo experimental de la densidad es aproximadamente
 
 \begin{equation}
-0.979\,\mathrm{g/cm^3}
+0.913\,\mathrm{g/cm^3}
 \leq
 \rho_f
 \leq
-1.003\,\mathrm{g/cm^3}.
+1.069\,\mathrm{g/cm^3}.
 \end{equation}
 
 Este intervalo contiene el valor de referencia de $1.00\,\mathrm{g/cm^3}$, 
@@ -218,25 +255,28 @@ Para analizar el vaciado del recipiente se registró el tiempo necesario para qu
 Para el experimento se utilizaron
 
 \begin{equation}
-d_1=0.30\,\mathrm{cm},
-\qquad
-d_2=14.30\,\mathrm{cm}.
+\begin{aligned}
+d_1&=(0.300\,\mathrm{cm}\pm0.05\,\mathrm{mm}),\\
+d_2&=(14.300\,\mathrm{cm}\pm0.05\,\mathrm{mm}).
+\end{aligned}
 \end{equation}
 
+Los tiempos experimentales, los tiempos teóricos y los errores porcentuales se presentan en la Tabla~\ref{tab:torricelli}.
 
 \begin{table}[htbp]
 \centering
 \caption{Tiempos experimentales y teóricos de vaciado del recipiente.}
 \label{tab:torricelli}
-\begin{tabular}{ccccc}
+\scriptsize
+\begin{tabular}{cccc}
 \hline
 $h$ (cm) & $t$ (s) & $t_v$ (s) & Error (\%) \\
 \hline
-10.00 & 375.32 & 324.59 & 15.64 \\
-8.00 & 355.59 & 290.32 & 22.48 \\
-6.00 & 296.20 & 251.42 & 17.81 \\
-4.00 & 219.11 & 205.29 & 11.60 \\
-2.00 & 136.84 & 145.16 & 5.73 \\
+$10.00\pm0.05$ & 375.32 & $324.59\pm108.22$ & 15.64 \\
+$8.00\pm0.05$ & 355.59 & $290.32\pm96.80$ & 22.48 \\
+$6.00\pm0.05$ & 296.20 & $251.42\pm83.83$ & 17.81 \\
+$4.00\pm0.05$ & 219.11 & $205.29\pm68.46$ & 11.60 \\
+$2.00\pm0.05$ & 136.84 & $145.16\pm48.43$ & 5.73 \\
 \hline
 \end{tabular}
 \end{table}
@@ -256,6 +296,19 @@ t_v=
 \end{equation}
 
 donde $d_1$ corresponde al diámetro del orificio de salida y $d_2$ al diámetro del recipiente. 
+
+La incertidumbre del tiempo teórico se obtuvo por propagación de las incertidumbres de $d_1$, $d_2$ y $h$:
+
+\begin{equation}
+\frac{\Delta t_v}{t_v}=
+\sqrt{
+\left(2\frac{\Delta d_2}{d_2}\right)^2+
+\left(2\frac{\Delta d_1}{d_1}\right)^2+
+\left(\frac{1}{2}\frac{\Delta h}{h}\right)^2
+}.
+\end{equation}
+
+La incertidumbre instrumental del cronómetro no fue proporcionada; por ello, los valores de $t$ se reportan sin una incertidumbre numérica adicional.
 
 De acuerdo con la ecuación anterior, el tiempo de vaciado es proporcional a la raíz cuadrada de la altura inicial:
 
@@ -286,7 +339,7 @@ con
 R^2=0.9806.
 \end{equation}
 
-La representación gráfica de los datos y del ajuste de potencia se presenta en la Figura~\ref{fig:potencia_torricelli}.
+La representación gráfica de los datos y del ajuste de potencia se presenta en la Fig.~\ref{fig:potencia_torricelli}.
 
 \begin{figure}[htbp]
 \centering

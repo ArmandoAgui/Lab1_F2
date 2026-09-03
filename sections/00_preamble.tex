@@ -9,6 +9,7 @@
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{url}
+\usepackage{pgfplots}
 
 \graphicspath{{images/}{diagrams/}{Plantilla_LATEX/}}
 \sisetup{
@@ -16,6 +17,8 @@
   separate-uncertainty = true,
   per-mode = symbol
 }
+\pgfplotsset{compat=1.18}
+\addto\captionsspanish{\renewcommand{\figurename}{Fig.}}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
