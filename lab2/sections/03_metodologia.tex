@@ -1,28 +1,19 @@
 \section{Metodología}
 
-% Se conserva la convención de subsecciones con letras del Laboratorio 1.
-\begingroup
-\makeatletter
-\renewcommand{\thesubsection}{\Alph{subsection}}
-\def\thesubsectiondis{\Alph{subsection}.}
-\makeatother
-
-Para estudiar el movimiento oscilatorio se construyó un péndulo simple mediante un sensor de rotación NeuLog, un cordel y esferas de diferente masa. La longitud del péndulo, denotada por $L$, se midió desde el eje central de la rueda del sensor hasta el centro de la esfera. El sensor se conectó a la interfaz NeuLog correspondiente y se empleó el software NeuLog para registrar la posición angular $\theta$ en función del tiempo. Las mediciones ordinarias se configuraron con una duración de \SI{10}{\second} y una frecuencia de muestreo de \SI{100}{muestras\per\second}. Los registros obtenidos y las gráficas correspondientes se exportaron en formato CSV para su posterior procesamiento.
+Para estudiar el movimiento oscilatorio se construyó un péndulo simple mediante un sensor de rotación NeuLog, un cordel y esferas de diferente masa. La longitud del péndulo, denotada por $L$, se midió desde el eje central de la rueda del sensor hasta el centro de la esfera. El sensor se conectó a la interfaz NeuLog correspondiente y se empleó el software NeuLog para registrar la posición angular $\theta$ en función del tiempo. Las mediciones ordinarias se configuraron con una duración de \SI{10}{\second} y una frecuencia de muestreo de \SI{100}{muestras\per\second}. Los datos obtenidos se exportaron en formato CSV y las gráficas correspondientes en formato PNG para su posterior procesamiento.
 
 \subsection{Dependencia del período con la masa}
 
-Se mantuvieron aproximadamente constantes la longitud $L$ del péndulo y la amplitud angular inicial. Bajo estas condiciones se realizaron mediciones con tres esferas de diferente masa, manteniendo el mismo procedimiento de registro para cada una. En cada ensayo se obtuvo la posición angular $\theta$ como función del tiempo y se exportaron los datos generados por el software. El período de oscilación $T$ se determinó posteriormente a partir de las gráficas registradas, mediante la identificación de intervalos sucesivos correspondientes a un ciclo de movimiento.
+Se mantuvieron aproximadamente constantes la longitud $L$ del péndulo y la amplitud angular inicial. Bajo estas condiciones se realizaron mediciones con tres esferas de diferente masa, manteniendo el mismo procedimiento de adquisición para cada una. En cada ensayo se registró la posición angular $\theta$ en función del tiempo. Posteriormente, el período de oscilación $T$ se determinó a partir de los intervalos temporales correspondientes a ciclos completos de la señal registrada.
 
 \subsection{Dependencia del período con la longitud}
 
-Para analizar la influencia de la longitud, se utilizó la esfera de menor masa y se mantuvo aproximadamente constante la amplitud angular inicial. La longitud $L$ se modificó en aproximadamente cinco configuraciones, con variaciones cercanas a \SI{5}{\centi\meter} entre configuraciones sucesivas. Para cada valor de $L$ se registró el movimiento angular durante \SI{10}{\second}, con una frecuencia de muestreo de \SI{100}{muestras\per\second}. A partir de cada registro se determinó el período $T$ y se conservaron los archivos CSV y las gráficas generadas para el análisis posterior.
+Para analizar la influencia de la longitud, se utilizó la esfera de menor masa y se mantuvo aproximadamente constante la amplitud angular inicial. La longitud $L$ se modificó en cinco configuraciones, con variaciones cercanas a \SI{5}{\centi\meter} entre valores sucesivos. Para cada longitud se registró el movimiento angular durante \SI{10}{\second}, con una frecuencia de muestreo de \SI{100}{muestras\per\second}. A partir de cada registro se determinó el período $T$, conservándose los archivos de datos y las gráficas correspondientes para su posterior análisis.
 
 \subsection{Dependencia del período con la amplitud}
 
-Se empleó la esfera de menor masa y se fijó una longitud cercana a \SI{50}{\centi\meter}. La amplitud angular inicial, denotada por $\theta_{\max}$, se modificó utilizando al menos tres valores diferentes, todos menores que \SI{30}{\degree}. Para cada configuración se registró la posición angular en función del tiempo bajo las condiciones ordinarias de adquisición. El período de oscilación se determinó posteriormente a partir de los máximos y mínimos sucesivos observados en las gráficas de $\theta$ frente al tiempo.
+Se empleó la esfera de menor masa y se fijó una longitud cercana a \SI{50}{\centi\meter}. La amplitud angular inicial $\theta_0$ se modificó utilizando al menos tres valores diferentes, todos menores que \SI{30}{\degree}. Para cada configuración se registró la posición angular en función del tiempo bajo las mismas condiciones de adquisición. El período de oscilación se determinó posteriormente a partir de los intervalos temporales asociados a ciclos completos de la señal.
 
 \subsection{Oscilaciones amortiguadas}
 
-Para estudiar el amortiguamiento se utilizó la esfera de menor masa y una longitud del péndulo aproximadamente igual a \SI{50}{\centi\meter}. En este caso, el sensor se configuró para registrar el movimiento durante \SI{1}{\minute}, manteniendo una frecuencia de muestreo de \SI{100}{muestras\per\second}. Se registró la disminución progresiva de la amplitud angular con el tiempo y se exportaron los datos en formato CSV. Posteriormente, se identificaron los máximos de amplitud angular y sus instantes correspondientes para describir el comportamiento del amortiguamiento en función del tiempo.
-
-\endgroup
+Para estudiar el amortiguamiento se utilizó la esfera de menor masa y una longitud del péndulo cercana a \SI{50}{\centi\meter}. En este caso, el sensor se configuró para registrar el movimiento durante \SI{1}{\minute}, manteniendo una frecuencia de muestreo de \SI{100}{muestras\per\second}. Se registró la disminución progresiva de la amplitud angular con el tiempo y se exportaron los datos obtenidos. Posteriormente, se identificaron los máximos de amplitud angular $\theta_{\max}$ y sus respectivos instantes $t$, con el propósito de analizar la relación entre la amplitud y el tiempo.
