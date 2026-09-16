@@ -49,10 +49,7 @@ Las señales temporales registradas por el software NeuLog para cada una de las 
 \label{fig:graficas_masas}
 \end{figure}
 
-El modelo matemático del péndulo simple ideal en el régimen de pequeñas oscilaciones establece que el período depende de la longitud y de la aceleración de la gravedad local:
-\begin{equation}
-T = 2\pi \sqrt{\frac{L}{g}}
-\end{equation}
+De acuerdo con la Ec.~\eqref{eq:periodo_pendulo}, el modelo matemático del péndulo simple ideal en el régimen de pequeñas oscilaciones establece que el período depende de la longitud y de la aceleración de la gravedad local.
 
 Al sustituir la longitud de trabajo y el valor estándar de la gravedad, se obtiene un período teórico de $T_{\text{teor}} \approx \SI{2.051}{\second}$. 
 
@@ -119,18 +116,13 @@ En la Fig.~\ref{fig:graficas_longitudes} se presentan las curvas correspondiente
 
 En términos generales, se observa una disminución del período al reducirse la longitud del péndulo, en concordancia con la relación teórica $T \propto \sqrt{L}$. Los valores correspondientes a $L_3$ y $L_4$ presentan una pequeña desviación local respecto a esta tendencia.
 
-Físicamente, la frecuencia angular natural del sistema está definida por
-
-\begin{equation}
-\omega = \sqrt{g/L}
-\end{equation}
-Al disminuir el parámetro $L$, la fuerza restauradora gravitacional por unidad de desplazamiento se intensifica de forma relativa, incrementando la aceleración angular del cuerpo. 
+Físicamente, la frecuencia angular natural del sistema está definida por la Ec.~\eqref{eq:frecuencia_angular}. Al disminuir el parámetro $L$, la fuerza restauradora gravitacional por unidad de desplazamiento se intensifica de forma relativa, incrementando la aceleración angular del cuerpo.
 
 Como consecuencia, las oscilaciones tienden a volverse más rápidas. Las discrepancias locales respecto a la tendencia general pueden asociarse a las incertidumbres propias del procedimiento experimental y a las limitaciones del montaje real, que se discuten posteriormente.
 
 \subsection{Efecto de la Amplitud Angular Inicial}
 
-Para verificar la validez de la aproximación de ángulos pequeños ($\sin\theta \approx \theta$), se fijó la esfera de menor masa y una longitud de $L = \SI{50.0 \pm 0.05}{\centi\meter}$. Se varió la amplitud angular inicial $\theta_0$ en tres configuraciones por debajo del límite teórico de linealidad. Los períodos calculados se resumen en la Tabla~\ref{tab:tabla_amplitudes}.
+Para examinar la aproximación de ángulos pequeños ($\sin\theta \approx \theta$), se fijó la esfera de menor masa y una longitud de $L = \SI{50.0 \pm 0.05}{\centi\meter}$. Se varió la amplitud angular inicial $\theta_0$ en tres configuraciones comprendidas entre $15^\circ$ y $30^\circ$. Los períodos calculados se resumen en la Tabla~\ref{tab:tabla_amplitudes}.
 
 \begin{table}[htbp]
 \centering
