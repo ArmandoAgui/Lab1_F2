@@ -1,87 +1,31 @@
 \section{Discusión}
 
-\subsection{Fuerza restauradora y demostración del carácter armónico simple}
-En el péndulo simple, la componente tangencial del peso actúa como
-fuerza restauradora: $F_t = -mg\sin\theta$. Aplicando la segunda ley
-de Newton para la rotación en torno al eje de suspensión,
+\subsection{Fuerza restauradora y carácter armónico simple}
+En el péndulo simple, la componente tangencial del peso actúa como fuerza restauradora: $F_t=-mg\sin\theta$. Aplicando la segunda ley de Newton para la rotación en torno al eje de suspensión,
 
 \begin{equation}
-mL\,\ddot{\theta} = -mg\sin\theta
+mL\,\ddot{\theta}=-mg\sin\theta,
 \end{equation}
 
 de donde la masa se cancela, quedando
 
 \begin{equation}
-\ddot{\theta} + \frac{g}{L}\sin\theta = 0.
+\ddot{\theta}+\frac{g}{L}\sin\theta=0.
 \end{equation}
 
-Para ángulos pequeños, $\sin\theta \approx \theta$, por lo que la
-ecuación se reduce a la forma canónica de un oscilador armónico
-simple,
+Para ángulos pequeños, $\sin\theta\approx\theta$, por lo que la ecuación se reduce a la forma canónica de un oscilador armónico simple,
 
 \begin{equation}
-\ddot{\theta} + \omega^2\theta = 0, \qquad \omega = \sqrt{\frac{g}{L}},
+\ddot{\theta}+\omega^2\theta=0, \qquad \omega=\sqrt{\frac{g}{L}},
 \end{equation}
 
-cuya solución es $\theta(t) = \theta_0\cos(\omega t + \varphi)$, con
-período $T = 2\pi\sqrt{L/g}$. Este resultado es consistente con dos
-observaciones directas de nuestros datos: la cancelación de $m$ en la
-ecuación de movimiento explica que los períodos medidos para las tres
-esferas (Tabla I: $2.08$, $2.05$ y $2.07\,\text{s}$, con desviaciones
-de apenas $1.41\,\%$, $-0.05\,\%$ y $0.92\,\%$ respecto al valor
-teórico) sean prácticamente idénticos pese a que las masas difieren
-hasta en un factor de $12$ ($72.5\,\text{g}$ frente a $5.8\,\text{g}$).
-Asimismo, el hecho de que en la Tabla III el período se mantenga en
-$1.49\,\text{s}$ para $\theta_0 = 30^\circ$ y $20^\circ$, con una
-variación de apenas $1.34\,\%$ hasta $\theta_0 = 15^\circ$, confirma
-que en ese rango la aproximación $\sin\theta \approx \theta$ introduce
-un error despreciable frente a la resolución temporal del sensor
-($0.01\,\text{s}$).
+cuya solución es $\theta(t)=\theta_0\cos(\omega t+\varphi)$, con período $T=2\pi\sqrt{L/g}$. Este resultado es consistente con dos observaciones directas de los datos. La cancelación de $m$ en la ecuación de movimiento concuerda con que los períodos medidos para las tres esferas (Tabla~\ref{tab:tabla_masas}: $2.08$, $2.05$ y $2.07\,\mathrm{s}$, con desviaciones de \SI{1.41}{\percent}, \SI{-0.05}{\percent} y \SI{0.92}{\percent} respecto al valor teórico) sean similares pese a las diferencias entre las masas. Asimismo, en la Tabla~\ref{tab:tabla_amplitudes} el período se mantiene en $1.49\,\mathrm{s}$ para $\theta_0=30^\circ$ y $20^\circ$, con una variación de \SI{1.34}{\percent} hasta $\theta_0=15^\circ$. Los valores experimentales obtenidos para las distintas amplitudes muestran variaciones pequeñas del período, lo cual es consistente con la aproximación de pequeñas oscilaciones en el intervalo estudiado.
 
 \subsection{¿Puede considerarse nuestro péndulo un péndulo simple?}
-El modelo de péndulo simple idealiza el sistema como una masa puntual
-suspendida de un hilo inextensible y sin masa. Nuestros datos se
-aproximan razonablemente a este ideal: las desviaciones porcentuales
-del período respecto al valor teórico fueron menores al $1.5\,\%$ en
-todos los casos de la Tabla I, y los datos de la Tabla II muestran la
-tendencia monótona decreciente esperada de $T \propto \sqrt{L}$ al
-reducir $L$ de $99.5\,\text{cm}$ a $79.5\,\text{cm}$. Sin embargo, se
-observó un salto no lineal entre $L_2$ y $L_3$ ($1.96\,\text{s} \to
-1.81\,\text{s}$, una caída abrupta frente al resto de la progresión)
-que no es atribuible al modelo puntual ideal. Esto es consistente con
-que las esferas utilizadas poseen un radio no despreciable frente a
-$L$, por lo que su momento de inercia respecto al eje de suspensión no
-es estrictamente el de una partícula puntual, y con que el cordel real
-posee masa y cierta elasticidad, desplazando el centro de masa
-efectivo del sistema — ambos factores señalados como fuentes de error
-en la Sección III-E. En conjunto, se concluye que nuestro péndulo se
-comporta como un péndulo simple \emph{en buena aproximación}
-($\text{error} < 1.5\,\%$ en el régimen de masa y ángulo pequeño), pero
-no de forma exacta, particularmente al variar $L$.
+El modelo de péndulo simple idealiza el sistema como una masa puntual suspendida de un hilo inextensible y sin masa. Los datos se aproximan razonablemente a este ideal: las desviaciones porcentuales del período respecto al valor teórico fueron menores al \SI{1.5}{\percent} en todos los casos de la Tabla~\ref{tab:tabla_masas}, y los datos de la Tabla~\ref{tab:tabla_longitudes} muestran una tendencia general decreciente compatible con $T\propto\sqrt{L}$ al reducir $L$ de $99.5\,\mathrm{cm}$ a $79.5\,\mathrm{cm}$. Sin embargo, se observa una desviación local entre algunas configuraciones. Esta puede asociarse a las limitaciones del montaje real respecto al modelo ideal, entre ellas la masa y elasticidad del cordel, el tamaño finito de la esfera, el rozamiento del sistema y las incertidumbres en la medición de la longitud y del período. En conjunto, los resultados indican que el montaje se comporta como un péndulo simple \emph{en buena aproximación}, al presentar pequeñas desviaciones respecto al modelo teórico en el estudio de la masa y pequeñas variaciones del período dentro del intervalo de amplitudes analizado, aunque no reproduce de forma exacta todas las condiciones del modelo ideal.
 
 \subsection{Relación entre la amplitud y el tiempo en el régimen amortiguado}
-El ajuste exponencial obtenido a partir de los 15 máximos de amplitud
-registrados en la Tabla IV, $y = (173.80 \pm 0.64)\,e^{(-0.00573 \pm
-0.00027)x}$ con $R^2 = 0.9693$ (Sec. III-D), confirma que la envolvente
-sigue una relación de la forma $\theta_{\text{máx}}(t) = \theta_0
-e^{-\gamma t}$, característica de un oscilador sometido a una fuerza
-disipativa de tipo viscoso lineal ($F_r = -bv$). El alto coeficiente de
-determinación obtenido indica que este modelo describe con éxito el
-$96.93\,\%$ de la dispersión de los datos medidos, lo cual respalda la
-elección del ajuste exponencial frente a una envolvente lineal (propia
-de fricción seca tipo Coulomb), que no se ajusta al comportamiento
-observado en la Fig.~5.
+El ajuste exponencial obtenido a partir de los 15 máximos de amplitud registrados en la Tabla~\ref{tab:tabla_amortiguado}, $y=(173.80\pm0.64)e^{(-0.00573\pm0.00027)x}$ con $R^2=0.9693$, muestra una buena concordancia con una relación de la forma $\theta_{\max}(t)=\theta_0e^{-\gamma t}$. El ajuste presenta una buena correspondencia con los datos experimentales, como indica $R^2=0.9693$ y se observa en la Fig.~\ref{fig:regresion_exponencial}. El comportamiento observado es compatible con el modelo de amortiguamiento viscoso lineal utilizado ($F_r=-bv$), sin que ello permita atribuir de manera exclusiva la disipación a este mecanismo.
 
 \subsection{Cumplimiento de los objetivos de la práctica}
-Los resultados obtenidos permiten dar cumplimiento a ambos objetivos
-planteados. Respecto al primer objetivo, se verificó que el período de
-oscilación es independiente de la masa (Tabla I) y depende de la
-longitud del péndulo (Tabla II) siguiendo aproximadamente la relación
-$T \propto \sqrt{L}$, mientras que para amplitudes angulares menores a
-$30^\circ$ (Tabla III) el período no muestra una dependencia
-significativa de $\theta_0$, validando la aproximación de oscilador
-armónico simple en ese rango. Respecto al segundo objetivo, se observó
-y cuantificó la disminución progresiva de la amplitud angular con el
-tiempo (Tabla IV), estableciendo mediante el ajuste exponencial que
-dicha disminución corresponde a un amortiguamiento viscoso lineal, con
-constante $b = (6.65 \pm 0.32)\times 10^{-5}\,\text{kg/s}$.
+Los resultados obtenidos son consistentes con los objetivos planteados. No se observó una dependencia significativa del período con la masa (Tabla~\ref{tab:tabla_masas}); el período presentó una tendencia general a disminuir cuando disminuyó la longitud (Tabla~\ref{tab:tabla_longitudes}); y, para las amplitudes ensayadas, permaneció aproximadamente constante (Tabla~\ref{tab:tabla_amplitudes}). Asimismo, la amplitud disminuyó con el tiempo (Tabla~\ref{tab:tabla_amortiguado}) y presentó una buena concordancia con un modelo exponencial. El ajuste mostró un comportamiento compatible con el amortiguamiento viscoso lineal y produjo $b=(6.65\pm0.32)\times10^{-5}\,\mathrm{kg/s}$.

@@ -49,14 +49,14 @@ Las señales temporales registradas por el software NeuLog para cada una de las 
 \label{fig:graficas_masas}
 \end{figure}
 
-El modelo matemático del péndulo simple ideal en el régimen de pequeñas oscilaciones establece que el período está regido exclusivamente por la longitud y la aceleración de la gravedad local:
+El modelo matemático del péndulo simple ideal en el régimen de pequeñas oscilaciones establece que el período depende de la longitud y de la aceleración de la gravedad local:
 \begin{equation}
 T = 2\pi \sqrt{\frac{L}{g}}
 \end{equation}
 
 Al sustituir la longitud de trabajo y el valor estándar de la gravedad, se obtiene un período teórico de $T_{\text{teor}} \approx \SI{2.051}{\second}$. 
 
-La comparación cuantitativa de la evidencia empírica revela desviaciones porcentuales mínimas respecto al modelo teórico: \SI{1.41}{\percent} para $m_1$, \SI{-0.05}{\percent} para $m_2$, y \SI{0.92}{\percent} para $m_3$. Dado que estas sutiles fluctuaciones numéricas caen dentro del umbral de la resolución temporal del muestreo (\SI{0.01}{\second}), se demuestra de forma sólida que la masa no altera la cinemática del péndulo, validando la aproximación del modelo de partícula puntual suspendida.
+La comparación cuantitativa muestra desviaciones porcentuales pequeñas respecto al modelo teórico: \SI{1.41}{\percent} para $m_1$, \SI{-0.05}{\percent} para $m_2$ y \SI{0.92}{\percent} para $m_3$. Las diferencias observadas entre los períodos experimentales son pequeñas y no presentan una tendencia sistemática con la masa. Dentro de la precisión experimental alcanzada, los resultados son consistentes con la predicción del modelo de péndulo simple, según la cual el período es independiente de la masa.
 
 \subsection{Dependencia del Período con la Longitud del Péndulo}
 
@@ -117,7 +117,7 @@ En la Fig.~\ref{fig:graficas_longitudes} se presentan las curvas correspondiente
 \label{fig:graficas_longitudes}
 \end{figure}
 
-El análisis de los datos demuestra un comportamiento estrictamente monótono decreciente del período respecto a la longitud. 
+En términos generales, se observa una disminución del período al reducirse la longitud del péndulo, en concordancia con la relación teórica $T \propto \sqrt{L}$. Los valores correspondientes a $L_3$ y $L_4$ presentan una pequeña desviación local respecto a esta tendencia.
 
 Físicamente, la frecuencia angular natural del sistema está definida por
 
@@ -126,7 +126,7 @@ Físicamente, la frecuencia angular natural del sistema está definida por
 \end{equation}
 Al disminuir el parámetro $L$, la fuerza restauradora gravitacional por unidad de desplazamiento se intensifica de forma relativa, incrementando la aceleración angular del cuerpo. 
 
-Como consecuencia directa, las oscilaciones se vuelven notablemente más rápidas. La falta de linealidad perfecta en la reducción del período como el salto observable entre $L_2$ y $L_3$ se atribuye a efectos disipativos secundarios en el soporte y a la resolución discreta de la medición temporal, los cuales se discutirán en las secciones posteriores.
+Como consecuencia, las oscilaciones tienden a volverse más rápidas. Las discrepancias locales respecto a la tendencia general pueden asociarse a las incertidumbres propias del procedimiento experimental y a las limitaciones del montaje real, que se discuten posteriormente.
 
 \subsection{Efecto de la Amplitud Angular Inicial}
 
@@ -177,7 +177,7 @@ Los tres gráficos correspondientes a estas mediciones temporales se agrupan de 
 
 Al evaluar los resultados, se observa que el período se mantiene prácticamente invariante, registrando $\SI{1.49}{\second}$ para $30^{\circ}$ y $20^{\circ}$, con una sutil variación a $\SI{1.51}{\second}$ para $15^{\circ}$. 
 
-La diferencia máxima relativa entre los ensayos es de apenas el \SI{1.34}{\percent}. Esto pone de manifiesto que en el rango evaluado ($\theta_0 \le 30^{\circ}$), las correcciones de orden superior del modelo no lineal son numéricamente imperceptibles frente a la escala de muestreo discreta de la interfaz, validando el postulado del oscilador armónico simple.
+La diferencia máxima relativa entre los ensayos es de \SI{1.34}{\percent}. Los resultados muestran que, dentro del intervalo angular estudiado ($\theta_0 \le 30^{\circ}$), el período permanece aproximadamente constante, comportamiento consistente con la aproximación de pequeñas oscilaciones, para la cual $\sin\theta \approx \theta$.
 
 \subsection{Análisis del Régimen Amortiguado y Ajuste Exponencial}
 
@@ -237,7 +237,7 @@ El comportamiento global del sistema se presenta a través de sus componentes ex
 \label{fig:registro_continuo}
 \end{figure}
 
-El perfil armónico de la Fig.~\ref{fig:registro_continuo} exhibe un decaimiento progresivo y simétrico hacia la línea de equilibrio, patrón inequívoco de un régimen subamortiguado gobernado por una fuerza disipativa de tipo viscoso lineal ($F_r = -b v$). 
+El perfil armónico de la Fig.~\ref{fig:registro_continuo} exhibe un decaimiento progresivo hacia la línea de equilibrio. El decaimiento observado es compatible con un régimen subamortiguado y puede describirse adecuadamente mediante un modelo de amortiguamiento viscoso lineal ($F_r = -bv$).
 
 \begin{figure}[htbp]
 \centering
@@ -257,7 +257,7 @@ donde
 representa la constante de atenuación del sistema.
 
 
-Al realizar la regresión matemática sobre los datos recolectados, se determinó un coeficiente de determinación $R^2 = 0.9693$, confirmando que la función exponencial describe con éxito el \SI{96.93}{\percent} de la dispersión de las amplitudes medidas. La ecuación empírica obtenida del ajuste es:
+Al realizar la regresión matemática sobre los datos recolectados, se determinó un coeficiente de determinación $R^2 = 0.9693$, lo que indica una buena correspondencia entre el modelo exponencial y los datos experimentales. La ecuación empírica obtenida del ajuste es:
 \begin{equation}
 y = (173.80 \pm 0.64) \cdot e^{(-0.00573 \pm 0.00027)x}
 \end{equation}
@@ -300,22 +300,27 @@ Finalmente, el valor de la incertidumbre absoluta se deriva multiplicando este r
 \Delta b \approx \SI{0.3184e-5}{\kilogram\per\second}
 \end{equation}
 
-Y el valor definitivo para la constante de amortiguamiento viscoso es:
+Por tanto, el valor obtenido para la constante de amortiguamiento viscoso es:
 \begin{equation}
 b = (6.65 \pm 0.32) \times 10^{-5}\,\si{\kilogram\per\second}
 \end{equation}
 
 \subsection{Identificación de Fuentes de Error y Discrepancias}
 
-A pesar de que los coeficientes de determinación y las bajas desviaciones porcentuales respaldan la validez de los modelos físicos aplicados, existen pequeñas discrepancias numéricas inevitables entre los valores teóricos ideales y las mediciones de laboratorio. 
+Aunque el coeficiente de determinación y las desviaciones porcentuales muestran concordancia con los modelos físicos utilizados, existen pequeñas discrepancias entre los valores teóricos ideales y las mediciones de laboratorio.
 
 A continuación, se clasifican e interpretan las principales fuentes de error que afectaron el experimento:
 
 \begin{itemize}
     
-    \item \textbf{Error de paralelaje y definición del centro de masa:} La longitud del péndulo se midió manualmente empleando una regla graduada en milímetros. Debido a que las tres esferas poseen un volumen finito no despreciable, la estimación del centro geométrico de la masa se realizó por inspección visual. Este procedimiento introduce un error sistemático que se propaga directamente en los cálculos de la frecuencia angular natural.
+    \item \textbf{Paralelaje y definición del centro de masa:} La longitud del péndulo se midió manualmente empleando una regla graduada en milímetros. Debido a que las tres esferas poseen un volumen finito, la estimación de su centro geométrico se realizó por inspección visual. Este procedimiento constituye una posible fuente de incertidumbre en la longitud efectiva y, por tanto, en la frecuencia angular calculada.
     
-    \item \textbf{Elasticidad y densidad lineal del cordel:} Teóricamente se asume un hilo carente de masa e inextensible. En el entorno real, el cordel experimenta microelongaciones dinámicas debido a la tensión generada por el peso de las esferas pesadas al pasar por el punto de equilibrio inferior. Asimismo, la masa propia del hilo modifica ligeramente la posición real del centro de masa del sistema combinado (hilo + esfera), distanciándolo de la aproximación analítica de masa puntual.
+    \item \textbf{Elasticidad y densidad lineal del cordel:} El modelo teórico supone un hilo sin masa e inextensible. En el montaje real, la elasticidad del cordel puede afectar ligeramente su longitud efectiva, mientras que su masa puede modificar la posición del centro de masa del sistema combinado (hilo + esfera) respecto a la aproximación de masa puntual.
+
+    \item \textbf{Disipación y montaje:} La resistencia del aire y el rozamiento en el sensor o en el eje de rotación pueden contribuir a la pérdida de energía y constituyen posibles fuentes de incertidumbre.
+
+    \item \textbf{Liberación y determinación del período:} Las variaciones en la liberación manual del péndulo y la incertidumbre al identificar los puntos que delimitan un período pueden afectar ligeramente los valores obtenidos.
+
+    \item \textbf{Plano de oscilación:} Pequeñas desviaciones del movimiento respecto a un plano ideal constituyen otra posible fuente de incertidumbre experimental.
     
 \end{itemize}
-
