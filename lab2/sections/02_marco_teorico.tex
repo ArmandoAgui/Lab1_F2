@@ -1,0 +1,75 @@
+\section{Marco teórico}
+
+Un péndulo simple se modela como una masa puntual suspendida de un hilo inextensible y de masa despreciable, de longitud $L$. Cuando la masa se separa de su posición de equilibrio un ángulo $\theta$, la componente tangencial del peso actúa como fuerza restauradora y se expresa como
+
+\begin{equation}
+F_t=-mg\sin\theta.
+\label{eq:fuerza_restauradora}
+\end{equation}
+
+Aplicando la segunda ley de Newton al movimiento tangencial del sistema se obtiene
+
+\begin{equation}
+mL\ddot{\theta}=-mg\sin\theta,
+\label{eq:segunda_ley_pendulo}
+\end{equation}
+
+de donde resulta la ecuación de movimiento
+
+\begin{equation}
+\ddot{\theta}+\frac{g}{L}\sin\theta=0.
+\label{eq:movimiento_pendulo}
+\end{equation}
+
+Para pequeñas oscilaciones puede emplearse la aproximación
+
+\begin{equation}
+\sin\theta\approx\theta,
+\label{eq:aproximacion_angular}
+\end{equation}
+
+con $\theta$ expresado en radianes. Bajo esta aproximación, la ecuación de movimiento toma la forma de un oscilador armónico simple:
+
+\begin{equation}
+\ddot{\theta}+\frac{g}{L}\theta=0.
+\label{eq:oas_pendulo}
+\end{equation}
+
+La frecuencia angular natural del sistema queda definida por
+
+\begin{equation}
+\omega=\sqrt{\frac{g}{L}},
+\label{eq:frecuencia_angular}
+\end{equation}
+
+y el período de oscilación viene dado por
+
+\begin{equation}
+T=2\pi\sqrt{\frac{L}{g}}.
+\label{eq:periodo_pendulo}
+\end{equation}
+
+Esta expresión muestra que, dentro del modelo ideal y bajo la aproximación de pequeñas oscilaciones, el período depende de la longitud del péndulo y de la aceleración de la gravedad, pero no de la masa de la esfera. El período $T$ corresponde al tiempo requerido para completar un ciclo de oscilación. La amplitud angular inicial $\theta_0$ representa el desplazamiento angular máximo respecto a la posición de equilibrio al inicio del movimiento.
+
+En un sistema real existen mecanismos disipativos, como la resistencia del aire y el rozamiento en el soporte. Una forma común de modelar estas pérdidas es mediante un término de amortiguamiento viscoso lineal proporcional a la velocidad. En este modelo, la fuerza disipativa se representa como
+
+\begin{equation}
+F_r=-bv,
+\label{eq:fuerza_disipativa}
+\end{equation}
+
+donde $b$ es la constante de amortiguamiento. Para un régimen subamortiguado, la amplitud de las oscilaciones decrece progresivamente con el tiempo y puede modelarse mediante una envolvente exponencial de la forma
+
+\begin{equation}
+\theta_{\max}(t)=\theta_0e^{-\gamma t},
+\label{eq:envolvente_amortiguada}
+\end{equation}
+
+donde
+
+\begin{equation}
+\gamma=\frac{b}{2m}.
+\label{eq:constante_atenuacion}
+\end{equation}
+
+Este modelo permite describir la disminución gradual de la amplitud mientras el sistema continúa oscilando alrededor de la posición de equilibrio.
