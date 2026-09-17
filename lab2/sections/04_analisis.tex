@@ -238,16 +238,7 @@ El perfil armónico de la Fig.~\ref{fig:registro_continuo} exhibe un decaimiento
 \label{fig:regresion_exponencial}
 \end{figure}
 
-Como se aprecia en el ajuste de la Fig.~\ref{fig:regresion_exponencial}, teóricamente la envolvente exponencial se modela mediante la relación:
-\begin{equation}
-\theta_{\max}(t) = \theta_0 e^{-\gamma t} = \theta_0 e^{-\frac{b}{2m}t}
-\end{equation}
-donde 
-\begin{equation}
-    \gamma = \frac{b}{2m}
-\end{equation}
-representa la constante de atenuación del sistema.
-
+De acuerdo con el modelo definido en las Ecs.~\eqref{eq:envolvente_amortiguada} y~\eqref{eq:constante_atenuacion}, la envolvente de la amplitud presenta un decaimiento exponencial caracterizado por la constante de atenuación $\gamma$, como se aprecia en el ajuste de la Fig.~\ref{fig:regresion_exponencial}.
 
 Al realizar la regresión matemática sobre los datos recolectados, se determinó un coeficiente de determinación $R^2 = 0.9693$, lo que indica una buena correspondencia entre el modelo exponencial y los datos experimentales. La ecuación empírica obtenida del ajuste es:
 \begin{equation}
@@ -256,7 +247,7 @@ y = (173.80 \pm 0.64) \cdot e^{(-0.00573 \pm 0.00027)x}
 
 Con el fin de extraer el parámetro físico de amortiguamiento, se procede a relacionar de manera directa el exponente obtenido en el ajuste, $B = \SI{-0.00573 \pm 0.00027}{\second^{-1}}$, con el término teórico de decaimiento:
 \begin{equation}
-|B| = \gamma = \frac{b}{2m} \implies b = 2 m |B|
+|B| = \gamma \overset{\text{Ec.~\eqref{eq:constante_atenuacion}}}{\implies} b = 2 m |B|
 \end{equation}
 
 Sustituyendo la masa de la esfera utilizada y el valor absoluto del coeficiente dinámico del ajuste, se calcula el valor central de la constante $b$:
