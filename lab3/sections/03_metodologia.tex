@@ -1,32 +1,90 @@
 \section{Metodología}
 
-Inicialmente se midieron la profundidad y el diámetro interno de una probeta utilizando una regla y un calibrador Vernier. Con las dimensiones registradas se determinó la longitud efectiva de la columna de aire. También se midió la temperatura ambiente, cuyo valor se consideró como referencia para la velocidad del sonido en el aire.
+\subsection{Caracterización de la probeta}
 
-Para identificar las frecuencias de resonancia se empleó un teléfono celular con aplicaciones de generación de frecuencias y análisis de espectro. El teléfono se ubicó sobre la abertura de la probeta, de modo que el micrófono quedara dentro del tubo, como se muestra en la Fig.~\ref{fig:montaje_frecuencias}. Se realizaron barridos de frecuencia y se registraron las frecuencias asociadas con los máximos de resonancia observados. A partir de ellas se identificaron los modos de resonancia para el análisis posterior de la velocidad del sonido.
+Se midió la profundidad de la probeta con una regla y su diámetro interno con un calibrador Vernier. La temperatura ambiente se registró con un termómetro. Estas mediciones se utilizaron para obtener la longitud efectiva del tubo y calcular la velocidad de referencia del sonido en aire mediante la Ec.~\eqref{eq:velocidad_temperatura}.
+
+% TODO para el equipo: completar la resolución/incertidumbre de la regla, el
+% calibrador Vernier y el termómetro; indicar cuántas mediciones se repitieron.
+
+\subsection{Identificación de las frecuencias de resonancia}
+
+Se utilizó un teléfono celular con una aplicación generadora de frecuencias y otra para analizar el espectro. El teléfono se colocó sobre la abertura de la probeta, con el micrófono dentro del tubo, como se muestra en la Fig.~\ref{fig:montaje_frecuencias}. Se modificó la frecuencia de excitación y se localizaron en el espectro los máximos asociados con las resonancias; las frecuencias correspondientes se registraron para identificar los modos y sus números de armónico. La Fig.~\ref{fig:esquema_montaje} presenta un esquema del montaje, sin incluir conexiones adicionales.
+
+% TODO para el equipo: confirmar con el registro original la configuración aplicada.
+% La guía indica barridos de 150 a 2150 Hz durante 10 s, repetidos dos veces,
+% mientras que la Tabla 3 consigna 100 a 2300 Hz durante 20 s.
 
 \begin{figure}[!t]
 \centering
 \begin{minipage}[t]{0.48\columnwidth}
 \centering
-\includegraphics[width=\linewidth,height=0.18\textheight,keepaspectratio]{probetaCelular.jpeg}
+\includegraphics[width=\linewidth,height=0.16\textheight,keepaspectratio]{probetaCelular.jpeg}
 \caption{Montaje con teléfono para identificar las frecuencias de resonancia.}
 \label{fig:montaje_frecuencias}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.48\columnwidth}
 \centering
-\includegraphics[width=\linewidth,height=0.18\textheight,keepaspectratio]{probetaagua.jpeg}
+\includegraphics[width=\linewidth,height=0.16\textheight,keepaspectratio]{probetaagua.jpeg}
 \caption{Probeta con agua y columna de aire.}
 \label{fig:columna_aire}
 \end{minipage}
 \end{figure}
 
-En la segunda etapa se modificó la longitud de la columna de aire mediante la adición progresiva de agua a la probeta. En la Fig.~\ref{fig:columna_aire} se observa la probeta con agua y la columna de aire sobre su superficie. Para cada nivel de agua se efectuó un nuevo barrido de frecuencias y se registró la frecuencia de máxima resonancia, con el fin de estudiar la relación entre la longitud de la columna de aire y la frecuencia.
-
-Finalmente, se utilizaron diapasones de distintas frecuencias. Para cada uno se calculó previamente el volumen de agua requerido para producir resonancia y luego se comprobó experimentalmente dicha condición con la probeta. Además, se emplearon los diapasones para identificar las frecuencias de resonancia correspondientes a probetas con diferentes niveles de agua. La disposición utilizada en esta etapa se presenta en la Fig.~\ref{fig:resonancia_diapason}.
-
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.60\columnwidth,height=0.18\textheight,keepaspectratio]{diapasonprobeta.jpeg}
-\caption{Comprobación experimental de la resonancia mediante un diapasón y una probeta.}
+\begin{minipage}[c]{0.54\columnwidth}
+\centering
+\shorthandoff{<>}
+\begin{tikzpicture}[
+  x=1cm,y=0.52cm,
+  font=\scriptsize,
+  wall/.style={line width=1pt},
+  dimension/.style={{Stealth[reversed]}-{Stealth}, thin},
+  label/.style={align=center}
+]
+  % Probeta abierta arriba; el agua representa el cierre acústico inferior.
+  \draw[wall] (0,0) -- (0,5.4);
+  \draw[wall] (1.5,0) -- (1.5,5.4);
+  \draw[wall] (0,0) -- (1.5,0);
+  \fill[blue!20] (0.02,0.03) rectangle (1.48,1.25);
+  \draw[blue!60!black,thick] (0.02,1.25) -- (1.48,1.25);
+  \node[label] at (0.75,0.65) {agua};
+  \node[label] at (0.75,3.2) {columna de aire};
+  \draw[dimension] (1.8,1.3) -- (1.8,5.3);
+  \node[right,label] at (1.88,3.3) {$L'$};
+  \node[above,label] at (0.75,5.45) {Extremo abierto};
+  \node[below,label] at (0.75,-0.08) {Cierre acústico};
+  \draw[wall,rounded corners=2pt] (-1.8,3.8) rectangle (-0.15,5.2);
+  \node[label] at (-0.975,4.5) {Teléfono\\generador y\\analizador};
+  \draw[->] (-0.15,4.8) -- (0.12,5.35);
+\end{tikzpicture}
+\shorthandon{<>}
+\caption{Esquema del montaje experimental.}
+\label{fig:esquema_montaje}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.43\columnwidth}
+\centering
+\includegraphics[width=\linewidth,height=0.16\textheight,keepaspectratio]{diapasonprobeta.jpeg}
+\caption{Comprobación de resonancia con diapasón.}
 \label{fig:resonancia_diapason}
+\end{minipage}
 \end{figure}
+
+Una vez identificados los modos, se relacionaron las frecuencias con sus números de armónico. El ajuste lineal de $f_n$ respecto de $n$ permitió estimar la frecuencia fundamental y, mediante el modelo de tubo cerrado, obtener una estimación experimental de la velocidad del sonido.
+
+\subsection{Variación de la columna de aire}
+
+Se agregó agua progresivamente a la probeta para reducir la longitud de la columna de aire, como se ilustra en la Fig.~\ref{fig:columna_aire}. Para cada nivel se buscó y registró la frecuencia fundamental de resonancia. La longitud restante se relacionó con el volumen agregado mediante la Ec.~\eqref{eq:longitud_aire_agua}; posteriormente, la dependencia de la frecuencia respecto de la longitud inversa se utilizó para estimar la velocidad del sonido a partir de la pendiente del ajuste.
+
+% TODO para el equipo: confirmar los volúmenes realmente utilizados. La Tabla 6
+% de la guía indica 0, 75, 150, 225, 300, 375 y 450 cm^3; el procedimiento
+% también menciona una adición inicial de 50 mL. No se atribuyen aquí esos
+% valores a las mediciones realizadas hasta contrastarlos con los registros.
+
+\subsection{Comprobación de resonancia con diapasones}
+
+Se utilizaron diapasones de frecuencias conocidas. Para cada frecuencia se calculó el volumen de agua requerido con la Ec.~\eqref{eq:volumen_resonancia}; luego se ajustó el nivel de agua y se comprobó experimentalmente la resonancia, según se muestra en la Fig.~\ref{fig:resonancia_diapason}.
+
+% TODO para el equipo: confirmar las frecuencias de los diapasones efectivamente
+% usados. La guía enumera 256, 320, 384 y 480 Hz.
