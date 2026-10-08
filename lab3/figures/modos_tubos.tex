@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=1.1cm,y=0.85cm,font=\footnotesize]
+\node at (1.35,4.6) {Cerrado--abierto};
+\node at (4.95,4.6) {Abierto--abierto};
+\foreach \j/\n in {0/1,1/3,2/5}{
+ \begin{scope}[shift={(0,3.7-1.65*\j)}]
+ \draw[gray] (0,-.45)--(2.7,-.45) (0,.45)--(2.7,.45);
+ \draw[thick] (0,-.45)--(0,.45);
+ \draw[blue,domain=0:2.7,samples=70] plot (\x,{.32*sin(\n*90*\x/2.7)});
+ \draw[red,dashed,domain=0:2.7,samples=70] plot (\x,{.32*cos(\n*90*\x/2.7)});
+ \node[below] at (1.35,-.44) {$n=\n$};
+ \end{scope}
+}
+\foreach \j/\n in {0/1,1/2,2/3}{
+ \begin{scope}[shift={(3.6,3.7-1.65*\j)}]
+ \draw[gray] (0,-.45)--(2.7,-.45) (0,.45)--(2.7,.45);
+ \draw[blue,domain=0:2.7,samples=70] plot (\x,{.32*cos(\n*180*\x/2.7)});
+ \draw[red,dashed,domain=0:2.7,samples=70] plot (\x,{.32*sin(\n*180*\x/2.7)});
+ \node[below] at (1.35,-.44) {$n=\n$};
+ \end{scope}
+}
+\end{tikzpicture}

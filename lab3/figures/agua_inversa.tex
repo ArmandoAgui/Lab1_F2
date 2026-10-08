@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[width=.96\columnwidth,height=5.2cm,xlabel={$1/L'$ (m$^{-1}$)},ylabel={$f$ (Hz)},xmin=2.4,xmax=7.1,ymin=180,ymax=630,grid=major,tick label style={font=\scriptsize},label style={font=\small},legend style={font=\scriptsize,at={(.02,.98)},anchor=north west}]
+\addplot[only marks,mark=*,black] table[x=invL,y=f]{data/agua_plot.dat};
+\addlegendentry{Datos}
+\addplot[blue,thick,domain=2.5:7]{\PendienteAgua*x+\InterceptoAgua};
+\addlegendentry{Intercepto libre}
+\addplot[red,dashed,domain=2.5:7]{\PendienteOrigen*x};
+\addlegendentry{Forzado al origen}
+\end{axis}
+\end{tikzpicture}

@@ -1,285 +1,214 @@
-\section{Analisis}
-
-\subsection{Geometría de la Probeta y Velocidad Teórica del Sonido}
-
-Las dimensiones geométricas de la probeta se midieron con una regla graduada ($\pm 0.5\text{ mm}$) y un calibrador Vernier ($\pm 0.05\text{ mm}$), obteniendo la profundidad $L = (360.0 \pm 0.5)\text{ mm}$ y el diámetro interno $D = (50.00 \pm 0.05)\text{ mm}$.
-
-La longitud efectiva de la columna de aire $L_f$ en un tubo cerrado se calcula:
-
+\section{Análisis de resultados}
+\input{data/parametros}
+\subsection{Geometría y referencia térmica}
+Las dimensiones consignadas en el registro original se resumen en la Tabla~\ref{tab:geo}. Con la corrección prescrita en la guía \cite{guiauca},
 \begin{equation}
-L_f = L + 0.3D = 360.0 + 0.3(50.00) = 375.0\text{ mm} = 0.375\text{ m}
+\begin{aligned}
+L_f&=360.0+0.3(50.00)\ \mathrm{mm}\\
+   &=375.0\ \mathrm{mm}=0.3750\ \mathrm{m}.
+\end{aligned}
+\label{eq:lf_numerica}
 \end{equation}
-
-La incertidumbre propagada para $L_f$ viene dada por:
-
-\begin{equation}
-\Delta L_f = \Delta L + 0.3 \Delta D = 0.5 + 0.3(0.05) = 0.515\text{ mm}
-\end{equation}
-
-Por lo tanto, la longitud efectiva del tubo es $L_f = (0.3750 \pm 0.0005)\text{ m}$. En la Tabla~\ref{tab:geo} se resumen las dimensiones en distintas unidades.
-
-\begin{table}[htbp]
+\begin{table}[!t]
 \centering
-\caption{Geometría de la probeta}
+\caption{Geometría de la probeta. Incertezas conservadas del registro original y redondeadas para presentación.}
 \label{tab:geo}
-
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\multirow{2}{*}{\textbf{Profundidad (mm)}} &
-\multirow{2}{*}{\textbf{Diámetro interno (mm)}} &
-\multicolumn{3}{c|}{\textbf{Longitud efectiva}} \\
-\cline{3-5}
-& & \textbf{(mm)} & \textbf{(cm)} & \textbf{(m)} \\
-\hline
-$360 \pm 0.5$ &
-$50 \pm 0.05$ &
-$375 \pm 0.515$ &
-$37.5 \pm 0.0515$ &
-$0.375 \pm 0.000515$ \\
-\hline
-\end{tabular}%
-}
+\begin{tabular}{lcc}
+\toprule
+Magnitud & Valor & Unidad\\
+\midrule
+Profundidad $L$ & $360.0\pm0.5$ & mm\\
+Diámetro $D$ & $50.00\pm0.05$ & mm\\
+Longitud efectiva $L_f$ & $375.0\pm0.5$ & mm\\
+ & $37.50\pm0.05$ & cm\\
+ & $0.3750\pm0.0005$ & m\\
+\bottomrule
+\end{tabular}
 \end{table}
-
-A partir de la temperatura ambiente medida $T = (25.0 \pm 1.0)^\circ\text{C}$, se determinó la velocidad del sonido teórica $v_T$ mediante la ecuación termodinámica:
-
+La primera determinación utiliza $T=25.0$ \si{\degreeCelsius}:
 \begin{equation}
-v_T = 331.25 + 0.585 \cdot T = 345.875\text{ m/s}
-\label{eq:velocidad_temp}
+v_T=331.25+0.585(25.0)=345.875\ \mathrm{m/s}.
+\label{eq:vt_numerica}
 \end{equation}
-
-con incertidumbre $\Delta v_T = 0.585 \cdot \Delta T = 0.585\text{ m/s}$. Los resultados se consolidan en la Tabla~\ref{tab:velocidad_temp}.
-
-\begin{table}[htbp]
-\caption{Velocidad teórica del sonido según la temperatura.}
+\begin{table}[!t]
+\centering
+\caption{Primera determinación: referencia térmica.}
 \label{tab:velocidad_temp}
-\centering
-
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{ccc}
-\hline
-\textbf{Temperatura} ($^\circ\text{C}$) &
-\textbf{$v_T$} (m/s) &
-\textbf{$v_T$} (cm/s) \\
-\hline
-$25.0 \pm 1.0$ &
-$345.9 \pm 0.6$ &
-$34587.5 \pm 58.5$ \\
-\hline
-\end{tabular}%
-}
+\begin{tabular}{lcc}
+\toprule
+Magnitud & Valor & Unidad\\
+\midrule
+Temperatura & $25.0\pm1.0$ & \si{\degreeCelsius}\\
+Velocidad $v_T$ & $345.9\pm0.6$ & m/s\\
+ & $34590\pm60$ & cm/s\\
+\bottomrule
+\end{tabular}
 \end{table}
+Las incertezas instrumentales y propagadas ya presentes se conservan sin asignarles un nivel de confianza no documentado. Los errores estándar de los nuevos ajustes se identifican por separado como estadísticos; no constituyen un presupuesto completo de incertidumbre experimental.
 
-
-\subsection{Ondas Estacionarias y Ajuste Lineal de Armónicos}
-
-Mediante un barrido de frecuencias de $100$ a $2300\text{ Hz}$ durante $20\text{ s}$ registrado con la aplicación \textit{Spectroid}, se identificaron los picos de potencia sonora máxima correspondientes a las frecuencias de resonancia $f_n$. La captura del espectrograma evidenció picos sobresalientes respecto al ruido de fondo, como el pico máximo observado a $225.22\text{ Hz}$ con un nivel de $64.38\text{ dB}$, según la Fig.~\ref{fig:espectro_barrido}.
-
-El cociente $f_n / f_1$ permitió asociar experimentalmente cada frecuencia resonante con su entero de armónico $n$, confirmando que en un tubo cerrado únicamente se generan armónicos impares ($n = 1, 3, 5, 7, 9$). Los datos se detallan en la Tabla~\ref{tab:armonicos}.
-
-\begin{table}[htbp]
-\caption{Frecuencias de máxima resonancia registradas.}
+\subsection{Resonancias y armónicos}
+La Tabla~\ref{tab:armonicos} conserva las cinco frecuencias registradas y distingue el orden observado $k$, el cociente experimental y el armónico asignado $n$. Los cocientes próximos a $1,3,5,7,9$ son compatibles con la estructura modal del tubo cerrado, aunque presentan desviaciones respecto de múltiplos exactos.
+\begin{table}[!t]
+\centering
+\caption{Resonancias registradas y armónicos asignados. La configuración inicial del barrido permanece sin confirmar.}
 \label{tab:armonicos}
-\centering
-
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{ccccc}
-\hline
-\textbf{Modo} &
-\textbf{Intervalo (Hz)} &
-\textbf{Tiempo (s)} &
-\textbf{$f_n$ (Hz)} &
-\textbf{$n = f_n/f_1$} \\
-\hline
-$f_1$ & $100 - 2300$ & $20$ & $225.22$ & $1$ \\
-$f_2$ & $100 - 2300$ & $20$ & $672.24$ & $3$ \\
-$f_3$ & $100 - 2300$ & $20$ & $1083.83$ & $5$ \\
-$f_4$ & $100 - 2300$ & $20$ & $1610.74$ & $7$ \\
-$f_5$ & $100 - 2300$ & $20$ & $2031.36$ & $9$ \\
-\hline
-\end{tabular}%
-}
+\begin{tabular}{cccc}
+\toprule
+Orden $k$ & $f_n$ (Hz) & $f_n/f_1$ & Armónico $n$\\
+\midrule
+1 & 225.22 & 1.000 & 1\\
+2 & 672.24 & 2.985 & 3\\
+3 & 1083.83 & 4.812 & 5\\
+4 & 1610.74 & 7.152 & 7\\
+5 & 2031.36 & 9.020 & 9\\
+\bottomrule
+\end{tabular}
 \end{table}
-
-\begin{figure}[htbp]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=0.85\linewidth]{images/150_2150Hz.jpeg}
-\caption{Captura del espectro de frecuencias obtenido durante el barrido inicial ($150-2150\text{ Hz}$), destacando la frecuencia fundamental $f_1 = 225.22\text{ Hz}$.}
+\includegraphics[width=.77\columnwidth]{150_2150Hz.jpeg}
+\caption{Espectro registrado: la lectura \textit{Max} indica 225.22 Hz. La imagen muestra FFT de 16384 puntos y resolución de 1.3458 Hz, pero no la configuración del generador. Los niveles en dB no se interpretan como medidas acústicas absolutas.}
 \label{fig:espectro_barrido}
 \end{figure}
 
-Realizando un ajuste por mínimos cuadrados de la frecuencia $f_n$ en función del número de armónico $n$ ($f_n = mn + b$), se obtuvieron los parámetros expuestos en la Tabla~\ref{tab:ajuste_lineal}.
-
-\begin{table}[htbp]
-\caption{Parámetros del ajuste lineal $f_n$ vs. $n$.}
+El ajuste $f_n=m_hn+b_h$ se recalculó desde las frecuencias de la Tabla~\ref{tab:armonicos}. Para $N$ puntos, $x_i=n_i$ o $x_i=1/L'_i$, y $y_i=f_i$, se emplearon:
+\begin{equation}
+\begin{aligned}
+S_{xx}&=\sum_i(x_i-\bar x)^2,\\
+m&=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{S_{xx}},\quad
+b=\bar y-m\bar x.
+\end{aligned}
+\label{eq:ols}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+s^2&=\frac{\sum_i(y_i-mx_i-b)^2}{N-2},\\
+s_m&=\frac{s}{\sqrt{S_{xx}}},\qquad
+s_b=s\sqrt{\frac1N+\frac{\bar x^2}{S_{xx}}}.
+\end{aligned}
+\label{eq:errores_ols}
+\end{equation}
+\begin{equation}
+R^2=1-\frac{\sum_i(y_i-mx_i-b)^2}{\sum_i(y_i-\bar y)^2}.
+\label{eq:r2}
+\end{equation}
+Estas expresiones suponen residuos independientes de varianza constante y coordenadas horizontales conocidas. Sus resultados son condicionales a esas hipótesis.
+\begin{table}[!t]
+\centering
+\caption{Ajuste de armónicos. Los símbolos $\pm$ representan errores estándar del ajuste ordinario.}
 \label{tab:ajuste_lineal}
-\centering
-
-\resizebox{\columnwidth}{!}{%
 \begin{tabular}{ccc}
-\hline
-\textbf{Pendiente $m$ (Hz)} &
-\textbf{Intercepto $b$ (Hz)} &
-\textbf{$R^2$} \\
-\hline
-$227.5 \pm 4.8$ &
-$-13 \pm 28$ &
-$0.9987$ \\
-\hline
-\end{tabular}%
-}
+\toprule
+$m_h$ (Hz) & $b_h$ (Hz) & $R^2$\\
+\midrule
+$227.5\pm4.8$ & $-13\pm28$ & 0.9987\\
+\bottomrule
+\end{tabular}
 \end{table}
-
-El comportamiento entre el número de modo u armónico ($x$) y la respuesta del parámetro medido ($y$) se analiza experimentalmente a partir del gráfico de dispersión y su ajuste lineal, ilustrado en la Figura~\ref{fig:grafico_lineal}.
-
-\begin{figure}[htbp]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=0.85\linewidth]{images/Grafico_tabla3.jpeg}
-\caption{Gráfico de laboratorio para el ajuste lineal de los datos experimentales ($R^2 = 0.9987$).}
+\input{figures/armonicos}
+\caption{Frecuencia frente a armónico asignado: $f_n=(227.539\ \mathrm{Hz})n-13.017\ \mathrm{Hz}$, $R^2=0.998668$. No se añaden barras de error de frecuencia sin respaldo experimental.}
 \label{fig:grafico_lineal}
 \end{figure}
+El intercepto es compatible con cero en la escala de su error estándar. El coeficiente $R^2$ muestra una tendencia lineal fuerte, pero no demuestra por sí solo ausencia de sesgos.
 
-El alto valor del coeficiente de determinación ($R^2 = 0.9987$) confirma una excelente linealidad, respaldando el modelo teórico de tubo cerrado $f_n = n\left(\frac{v}{4L_f}\right)$.
-
-
-\subsection{Determinación Experimental de la Velocidad del Sonido}
-
-Tomando la pendiente del ajuste como la frecuencia fundamental $f = (227.5 \pm 4.8)\text{ Hz}$, se calculó la longitud de onda asociada $\lambda = 4L_f$:
-
+\subsection{Segunda determinación de la velocidad}
+Siguiendo la guía, se identifica la pendiente con una estimación de la frecuencia fundamental. Con $\lambda=4L_f=1.5000$ m y la pendiente sin redondear,
 \begin{equation}
-\lambda = 4(0.3750\text{ m}) = 1.500\text{ m}
+v_h=4L_fm_h=341.3085\ \mathrm{m/s}.
+\label{eq:vh}
 \end{equation}
-
-\begin{equation}
-\Delta\lambda = 4\Delta L_f = 4(0.000515\text{ m}) = 0.00206\text{ m} \approx 0.002\text{ m}
-\end{equation}
-
-A partir de $v = \lambda f$, la velocidad experimental resulta:
-
-\begin{equation}
-v = (1.500\text{ m})(227.5\text{ Hz}) = 341.25\text{ m/s}
-\end{equation}
-
-La incertidumbre combinada propagada $\Delta v$ se calculó como:
-
-\begin{equation}
-\Delta v = v\left(\frac{\Delta L_f}{L_f} + \frac{\Delta f}{f}\right) \approx 7.67\text{ m/s}
-\end{equation}
-
-La Tabla~\ref{tab:calculo_v} resume la segunda determinación de la velocidad del sonido.
-
-\begin{table}[htbp]
-\caption{Cálculo experimental de la velocidad del sonido.}
+La Tabla~\ref{tab:calculo_v} conserva las incertezas de longitud de onda y velocidad del reporte original; no se sustituyen por los errores estadísticos del ajuste.
+\begin{table}[!t]
+\centering
+\caption{Segunda determinación: armónicos. Incertezas propagadas conservadas del reporte original.}
 \label{tab:calculo_v}
-\centering
-
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{cc}
-\hline
-\textbf{Magnitud} & \textbf{Valor experimental} \\
-\hline
-Frecuencia fundamental $f$ (Hz) & $227.5 \pm 4.8$ \\
-Longitud de onda $\lambda$ (m) & $1.500 \pm 0.002$ \\
-Velocidad del sonido $v$ (m/s) & $341.3 \pm 7.7$ \\
-\hline
-\end{tabular}%
-}
+\begin{tabular}{lc}
+\toprule
+Magnitud & Valor\\
+\midrule
+Frecuencia estimada $m_h$ (Hz) & $227.5\pm4.8$\\
+Longitud de onda $\lambda$ (m) & $1.500\pm0.002$\\
+Velocidad $v_h$ (m/s) & $341.3\pm7.7$\\
+\bottomrule
+\end{tabular}
 \end{table}
-
-
-\subsection{Variación de la Columna de Aire y Resonancia con Agua}
-
-El área transversal de la probeta se obtuvo a partir de $A = \frac{\pi}{4}D^2$:
-
+La discrepancia se calcula antes de redondear:
 \begin{equation}
-A = \frac{\pi}{4}(5.000\text{ cm})^2 = 19.635\text{ cm}^2
+e_h=\frac{|v_h-v_T|}{v_T}\,100\%=1.32\%.
+\label{eq:error_armonicos}
 \end{equation}
+La diferencia de 4.57 m/s es menor que la incerteza conservada de 7.7 m/s. Esto indica concordancia en esa escala, sin establecer una compatibilidad con nivel de confianza definido.
 
-con una incertidumbre propagada $\Delta A = \frac{\pi}{2}D\Delta D = 0.039\text{ cm}^2$, entregando $A = (19.635 \pm 0.039)\text{ cm}^2$.
-
-Al añadir volumen de agua $V$, la longitud efectiva de la columna de aire disminuye a $L' = L_f - \frac{V}{A}$. Para cada nivel se realizó un barrido de $200$ a $1000\text{ Hz}$ ($10\text{ s}$). En la captura del analizador de espectros se identificaron los picos máximos de resonancia para cada columna, por ejemplo, a $V = 150.0\text{ cm}^3$ el pico máximo resonante fue de $280.29\text{ Hz}$ con $64.3\text{ dB}$, a $V = 75.0\text{ cm}^3$ fue de $242.92\text{ Hz}$ con $65.33\text{ dB}$, y a $V = 450.0\text{ cm}^3$ alcanzó $596.73\text{ Hz}$ con $64.45\text{ dB}$.
-
-Los datos procesados se sintetizan en la Tabla~\ref{tab:resonancia_agua}.
-
-\begin{table}[htbp]
-\caption{Resonancia en función del volumen de agua y longitud de aire.}
+\subsection{Serie con agua: relación frecuencia--longitud}
+El área interna es $A=\pi D^2/4=19.634954$ cm$^2$, presentada como $(19.635\pm0.039)$ cm$^2$ con la incerteza original. Las longitudes de la Tabla~\ref{tab:resonancia_agua} se calcularon a partir de los volúmenes registrados, sin redondear antes de los ajustes. Se mantienen las incertezas tabuladas; no se reconstruye su origen.
+\begin{table}[!t]
+\centering
+\caption{Serie con agua. Valores e incertezas originales; $L'$ es la longitud efectiva, no la geométrica.}
 \label{tab:resonancia_agua}
-\centering
-
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{cccc}
-\hline
-\textbf{\#} &
-\textbf{Volumen $V$ (cm$^3$)} &
-\textbf{Columna $L'$ (cm)} &
-\textbf{$f_{\mathrm{máx}}$ (Hz)} \\
-\hline
-1 & $0.0 \pm 2.0$ & $37.50 \pm 0.05$ & $218.23$ \\
-2 & $75.0 \pm 2.0$ & $33.68 \pm 0.16$ & $242.92$ \\
-3 & $150.0 \pm 2.0$ & $29.86 \pm 0.17$ & $280.29$ \\
-4 & $225.0 \pm 2.0$ & $26.04 \pm 0.18$ & $324.72$ \\
-5 & $300.0 \pm 2.0$ & $22.22 \pm 0.18$ & $374.40$ \\
-6 & $375.0 \pm 2.0$ & $18.40 \pm 0.19$ & $468.13$ \\
-7 & $450.0 \pm 2.0$ & $14.58 \pm 0.20$ & $596.73$ \\
-\hline
-\end{tabular}%
-}
+\begin{tabular}{ccc}
+\toprule
+$V$ (cm$^3$) & $L'$ (cm) & $f$ (Hz)\\
+\midrule
+$0.0\pm2.0$ & $37.50\pm0.05$ & 218.23\\
+$75.0\pm2.0$ & $33.68\pm0.16$ & 242.92\\
+$150.0\pm2.0$ & $29.86\pm0.17$ & 280.29\\
+$225.0\pm2.0$ & $26.04\pm0.18$ & 324.72\\
+$300.0\pm2.0$ & $22.22\pm0.18$ & 374.40\\
+$375.0\pm2.0$ & $18.40\pm0.19$ & 468.13\\
+$450.0\pm2.0$ & $14.58\pm0.20$ & 596.73\\
+\bottomrule
+\end{tabular}
 \end{table}
-
-La atenuación de la onda a lo largo del medio o el tiempo se estudió a través del comportamiento decreciente de la amplitud, como se muestra en la Figura~\ref{fig:grafico_exponencial}.
-
-\begin{figure}[htbp]
+La frecuencia aumenta de 218.23 a 596.73 Hz cuando $L'$ disminuye de 37.50 a 14.58 cm. La Fig.~\ref{fig:agua_longitud} muestra una tendencia inversa, no una atenuación de amplitud. Se sustituyó el ajuste exponencial anterior por el contraste con $f=v_T/(4L')$.
+\begin{figure}[!t]
 \centering
-\includegraphics[width=0.85\linewidth]{images/Grafico_tabla6.jpeg}
-\caption{Gráfico de laboratorio para el ajuste exponencial de los datos experimentales ($R^2 = 0.9813$).}
-\label{fig:grafico_exponencial}
+\input{figures/agua_longitud}
+\caption{Frecuencia frente a longitud efectiva. La curva es la predicción térmica $f=v_T/(4L')$, con $v_T=345.875$ m/s, y no un ajuste de atenuación.}
+\label{fig:agua_longitud}
 \end{figure}
 
-
-\subsection{Resonancia con Diapasones}
-
-Utilizando la expresión teórica para el volumen de agua
-
+\subsection{Tercera determinación: longitud inversa}
+Se ajustaron los siete pares $x=1/L'$ y $f$, utilizando $L'$ en metros:
 \begin{equation}
-V = \frac{\pi}{4}D^2\left(L_f - \frac{v_T}{4f}\right)
+f=m_ax+b_a,\qquad v_a=4m_a.
+\label{eq:ajuste_agua}
 \end{equation}
-
-se estimaron los volúmenes teóricos requeridos para lograr resonancia con la frecuencia propia de cada diapasón ($v_T = 345.875\text{ cm/s}$). Los resultados se tabulan en la Tabla~\ref{tab:diapasones}.
-
-\begin{table}[htbp]
-\caption{Comparación de volúmenes para resonancia con diapasón.}
-\label{tab:diapasones}
+Los parámetros recalculados son $m_a=(90.3\pm1.1)$ m/s, $b_a=(-24.2\pm4.8)$ Hz y $R^2=0.999284$. Los símbolos $\pm$ son errores estándar estadísticos según la Ec.~\eqref{eq:errores_ols}, no incertidumbres completas.
+\begin{equation}
+\begin{aligned}
+v_a&=361.3\ \mathrm{m/s},\qquad s_{v_a}=4s_{m_a}=4.3\ \mathrm{m/s},\\
+e_a&=\frac{|v_a-v_T|}{v_T}\,100\%=4.45\%.
+\end{aligned}
+\label{eq:va}
+\end{equation}
+Para el porcentaje se utilizó $v_a=361.265527$ m/s. El error estadístico no incluye incertidumbre en las longitudes ni sus correlaciones: todas dependen de las mismas mediciones de $L$ y $D$.
+\begin{figure}[!t]
 \centering
+\input{figures/agua_inversa}
+\caption{Frecuencia frente a longitud inversa: ajuste libre $f=(90.3164\ \mathrm{m/s})x-24.2152\ \mathrm{Hz}$, $R^2=0.999284$. La línea discontinua muestra el ajuste forzado al origen como contraste.}
+\label{fig:agua_inversa}
+\end{figure}
+El intercepto se aparta de cero en unas cinco veces su error estándar condicional, por lo que el alto $R^2$ no implica cumplimiento completo del modelo ideal. Se retiene el ajuste libre como resultado principal porque permite detectar esa desviación, en lugar de ocultarla al imponer $b=0$.
 
-\resizebox{\columnwidth}{!}{%
+Como contraste físico, imponer el origen produce $m_0=85.1457$ m/s y $v_0=340.6$ m/s, con error estándar condicional de 3.0 m/s y discrepancia de 1.53\%. La suma de residuos cuadrados pasa de 78.32 Hz$^2$ (libre) a 474.62 Hz$^2$ (origen), y los residuos del ajuste al origen cambian de negativos a positivos al acortarse la columna. Su cercanía al valor térmico no basta para preferirlo.
+
+\subsection{Predicción para diapasones}
+Se recalculó la Ec.~\eqref{eq:volumen_resonancia} con $D=5.000$ cm, $L_f=37.50$ cm y $v_T=34587.5$ cm/s. Todos los volúmenes predichos están entre cero y $AL\approx706.9$ cm$^3$ y dentro de la capacidad nominal de 500 mL indicada por la guía. La Tabla~\ref{tab:diapasones} conserva las incertezas teóricas originales, sin atribuirles una cobertura no documentada.
+\begin{table}[!t]
+\centering
+\caption{Predicciones para las frecuencias de diapasones de la guía. NV: volumen experimental no verificable con los registros disponibles.}
+\label{tab:diapasones}
 \begin{tabular}{cccc}
-\hline
-\textbf{Nota} &
-\textbf{Frecuencia $f$ (Hz)} &
-\textbf{$V_{\mathrm{teórico}}$ (cm$^3$)} &
-\textbf{$V_{\mathrm{agregado}}$ (cm$^3$)} \\
-\hline
-C' & $256$ & $73.10 \pm 2.28$ & $0 \pm 2$ \\
-E' & $320$ & $205.75 \pm 2.32$ & $0 \pm 2$ \\
-G' & $384$ & $294.17 \pm 2.35$ & $0 \pm 2$ \\
-B' & $480$ & $382.60 \pm 2.37$ & $0 \pm 2$ \\
-\hline
-\end{tabular}%
-}
+\toprule
+Nota & $f$ (Hz) & $V_{\mathrm{teo}}$ (cm$^3$) & $V_{\mathrm{exp}}$ (cm$^3$)\\
+\midrule
+C' & 256 & $73.10\pm2.28$ & NV\\
+E' & 320 & $205.75\pm2.32$ & NV\\
+G' & 384 & $294.17\pm2.35$ & NV\\
+B' & 480 & $382.60\pm2.37$ & NV\\
+\bottomrule
+\end{tabular}
 \end{table}
-
-
-\subsection{Discrepancias y Comparación de Modelos}
-
-El error relativo porcentual entre la velocidad teórica por temperatura ($v_T = 345.9\text{ m/s}$) y la velocidad experimental obtenida mediante el ajuste de armónicos ($v_{\text{exp}} = 341.3\text{ m/s}$) fue de:
-
-\begin{equation}
-e_r =
-\left|
-\frac{345.875 - 341.25}{345.875}
-\right|
-\times 100\% \approx 1.34\%
-\end{equation}
-
-Esta discrepancia menor al $2\%$ valida la efectividad del método de barrido de frecuencias y la precisión del modelo físico para tubos cerrados.
+Los cuatro ceros del reporte anterior se preservan en el respaldo y en el registro de validación, pero no se interpretan como mediciones confirmadas. En ausencia de volúmenes experimentales verificables no se calcula su error relativo. La fotografía evidencia una actividad con diapasón, no el resultado de las cuatro condiciones.

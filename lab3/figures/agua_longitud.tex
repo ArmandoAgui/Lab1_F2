@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+\begin{axis}[width=.96\columnwidth,height=5cm,xlabel={$L'$ (cm)},ylabel={$f$ (Hz)},xmin=13,xmax=39,ymin=180,ymax=680,grid=major,tick label style={font=\scriptsize},label style={font=\small},legend style={font=\scriptsize,at={(.98,.98)},anchor=north east}]
+\addplot[only marks,mark=*,black] table[x=Lcm,y=f]{data/agua_plot.dat};
+\addlegendentry{Datos}
+\addplot[blue,thick,domain=14:38,samples=80]{34587.5/(4*x)};
+\addlegendentry{Predicción térmica}
+\end{axis}
+\end{tikzpicture}

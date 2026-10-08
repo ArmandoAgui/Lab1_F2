@@ -1,0 +1,488 @@
+AUDITORÍA INTEGRAL DEL REPORTE — LABORATORIO 3 DE FÍSICA II
+Práctica: Ondas estacionarias en un tubo cerrado y medición de la velocidad del sonido
+Universidad Centroamericana José Simeón Cañas (UCA)
+
+1. RESUMEN EJECUTIVO
+
+El reporte es un borrador avanzado, pero todavía no está listo para entregarse. Tiene un marco teórico mayormente correcto, datos experimentales aprovechables y una discusión cuantitativa desarrollada. Sin embargo, faltan secciones esenciales y existen problemas científicos, de trazabilidad y de compilación.
+
+Calificación estimada del estado actual: 5,65/10. Con registros experimentales suficientes y las correcciones indicadas, podría aspirar aproximadamente a 9–9,5/10, sin que esto garantice la calificación oficial.
+
+Se revisaron el documento principal, todos los archivos de lab3/sections/, la bibliografía, las once imágenes existentes y las seis páginas del PDF disponible: lab3/main.pdf.
+
+Límites de la auditoría:
+- No se encontró la guía oficial de la Práctica 3 ni un archivo independiente de la rúbrica. La evaluación utiliza los 17 criterios y ponderaciones incluidos en la solicitud.
+- Los comentarios del código mencionan requisitos atribuidos a la guía, pero no permiten comprobarlos.
+- IEEEtran_HOWTO.pdf es documentación de la plantilla; no sustituye la guía experimental ni la rúbrica.
+- No existe un registro de compilación de lab3 que permita revisar advertencias. No se recompiló durante la auditoría, porque la solicitud exigía no modificar archivos.
+- La Tabla 8 y su procedimiento quedan excluidos de penalizaciones y tareas pendientes, conforme a la indicación de la instructora.
+
+Durante la auditoría no se modificaron archivos ni se reescribieron secciones. Este TXT es únicamente una copia del diagnóstico solicitado posteriormente.
+
+2. TABLA DE EVALUACIÓN
+
+Los criterios 15 y 16 se valoran aquí como contenido de conclusiones, siguiendo la organización habitual de los bloques finales de una rúbrica de artículo científico. Sin el documento oficial, esa distribución debe considerarse provisional.
+
+N.º | Criterio | Estado | Obtenido / máximo
+1 | Plantilla, organización y numeración | Cumple parcialmente | 0,35 / 0,60
+2 | Redacción, nomenclatura y unidades | Cumple parcialmente | 0,25 / 0,40
+3 | Principios físicos, ecuaciones y variables | Cumple parcialmente | 0,60 / 0,70
+4 | Relación teoría–experimento y modelo | Cumple parcialmente | 0,30 / 0,40
+5 | Fuentes académicas y citas | Cumple parcialmente | 0,20 / 0,40
+6 | Procedimiento, instrumentos e incertidumbres | Cumple parcialmente | 0,35 / 0,70
+7 | Esquema experimental | Cumple parcialmente | 0,20 / 0,30
+8 | Datos, unidades, incertidumbres y cifras | Cumple parcialmente | 0,45 / 0,80
+9 | Gráficas, ajustes y propagación | Cumple parcialmente | 0,45 / 1,00
+10 | Interpretación cuantitativa | Cumple parcialmente | 0,60 / 0,90
+11 | Comparación con modelo y errores | Cumple parcialmente | 0,60 / 0,80
+12 | Significado físico y objetivos | Cumple parcialmente | 0,40 / 0,60
+13 | Teoría, discrepancias y limitaciones | Cumple parcialmente | 0,35 / 0,50
+14 | Afirmaciones respaldadas por datos | Cumple parcialmente | 0,20 / 0,40
+15 | Resultados cuantitativos y objetivos en conclusiones | No cumple | 0,00 / 0,60
+16 | Conclusiones y mejoras futuras | No cumple | 0,00 / 0,40
+17 | Bibliografía IEEE completa | Cumple parcialmente | 0,35 / 0,50
+TOTAL: 5,65 / 10,00
+
+EVIDENCIAS, DEFICIENCIAS Y ACCIONES POR CRITERIO
+
+1. Usa IEEEtran, dos columnas, tablas I–VII, figuras 1–7 y ecuaciones numeradas. El PDF contiene numerosos ?? y citas [?]; hay secciones de plantilla. Completar el artículo y resolver todas las referencias.
+
+2. La teoría y buena parte de la discusión tienen redacción científica. Hay ejes X/Y, confusión entre modo y armónico, “Analisis” sin tilde y una unidad incorrecta de velocidad en IV-E. Corregir estas inconsistencias.
+
+3. Explica sonido longitudinal, resonancia, condiciones de frontera y armónicos impares; define las variables principales. Falta documentar mejor la aproximación térmica y delimitar la corrección de extremo para el montaje real.
+
+4. II-D conecta los modelos con las mediciones. IV-D interpreta erróneamente una gráfica de frecuencia frente a longitud como atenuación. Aplicar y justificar el modelo f frente a 1/L'.
+
+5. Hay dos libros académicos citados en el código. Las citas del PDF aparecen como [?]; no se puede seguir su correspondencia numérica. Resolverlas y señalar la fuente específica de las aproximaciones utilizadas.
+
+6. Describe las etapas y presenta incertidumbres instrumentales en análisis. Faltan configuración completa, repeticiones, instrumentos para volumen y procedimiento reproducible con diapasones. Resolver contradicciones entre metodología y análisis.
+
+7. Existe un esquema propio, Fig. 3, acompañado por fotografías. La cota L' representa aparentemente una longitud geométrica, aunque se define como efectiva; no distingue altavoz y micrófono. Precisar el dibujo.
+
+8. Hay siete tablas con datos geométricos y frecuencias. Faltan incertidumbres de frecuencia; hay redondeos inconsistentes y cuatro volúmenes experimentales iguales a cero sin explicación. Confirmar registros y homogeneizar presentación.
+
+9. El ajuste de armónicos es reproducible y tiene parámetros e incertidumbres. Las gráficas carecen de variables/unidades; falta el ajuste físico de agua y explicar el método de propagación.
+
+10. Calcula velocidad, discrepancia porcentual, cocientes armónicos y productos fL'. Falta la segunda estimación experimental basada en agua y una comparación efectiva de diapasones.
+
+11. La discusión identifica respuesta del teléfono, corrección de extremo, ruido y diferencias entre series. Algunas afirmaciones son demasiado concluyentes. Separar evidencia, hipótesis y efectos no cuantificados.
+
+12. V-A interpreta correctamente resonancias y reducción de la columna. Afirma que se cumple el “tercer objetivo”, pero los objetivos no están redactados. Formularlos y evaluar su cumplimiento real.
+
+13. V-B y V-C contienen comparaciones útiles. Falta estudiar el intercepto del ajuste de agua y corregir la contradicción entre análisis y discusión sobre el modelo exponencial.
+
+14. Varias afirmaciones incluyen cifras comprobables. No están suficientemente respaldadas la atenuación, la comprobación de todos los diapasones y ciertos detalles sobre repeticiones. Confirmar o limitar esas afirmaciones.
+
+15. La sección VI contiene únicamente una instrucción de plantilla. Redactar conclusiones cuantitativas a partir del análisis corregido.
+
+16. Hay mejoras propuestas en discusión, pero no existe una conclusión desarrollada. Elaborarla sin atribuir resultados a actividades no documentadas.
+
+17. Usa IEEEtran y presenta dos referencias con autores, título, edición, editorial, lugar y año. Falta resolver la correspondencia con citas y verificar la edición efectivamente consultada.
+
+No se otorgaron puntos por las instrucciones de plantilla del resumen, introducción o conclusiones.
+
+3. FORTALEZAS
+
+- Condiciones de frontera correctamente explicadas: nodo de desplazamiento en el extremo cerrado y antinodo en el abierto; comportamiento inverso para presión.
+- Modelo central coherente: v = λf, λ_n = 4L_f/n, f_n = nv/(4L_f), con n = 1, 3, 5, ...
+- Longitud efectiva considerada: incorpora 0,3D, en lugar de utilizar únicamente la profundidad física.
+- Ajuste de armónicos verificable: las frecuencias de la Tabla III reproducen los parámetros publicados.
+- Cálculos centrales correctos: longitud efectiva, área, velocidad de referencia, velocidad experimental y discrepancia porcentual.
+- Discusión con contenido propio: compara frecuencias, productos fL', discrepancias y fuentes de error específicas del montaje.
+- Fotografías pertinentes: documentan la probeta, el teléfono y el uso de un diapasón.
+- Datos suficientes para avanzar: la Tabla VI ya permite realizar el ajuste físico de la serie con agua; no es indispensable medir más niveles para comenzar ese análisis.
+
+4. DEFICIENCIAS POR SECCIÓN
+
+INTRODUCCIÓN Y RESUMEN — PENDIENTES
+Ubicación: página 1; 01_resumen.tex y 02_introduccion.tex.
+
+El resumen todavía dice “Redactar un resumen breve…” y las palabras clave son genéricas. La introducción indica “Presentar el fenómeno…” y muestra literalmente una instrucción sobre \cite{clave}.
+
+No existe todavía una introducción que presente el problema, la importancia del experimento y sus objetivos. Esto es contenido pendiente, no una introducción desarrollada con errores.
+
+MARCO TEÓRICO — DESARROLLADO, CON AJUSTES NECESARIOS
+Ubicación: páginas 1–2; 02_marco_teorico.tex.
+
+Las relaciones físicas principales son correctas. Los modelos de tubo cerrado y reducción de longitud mediante agua están bien conectados.
+
+Falta precisar:
+- La fuente de los coeficientes 331,25 y 0,585.
+- El alcance de la corrección 0,3D cuando el teléfono cubre parcialmente la abertura.
+- La distinción entre longitud física de aire y longitud efectiva.
+- Las condiciones para aplicar la fórmula de volumen: resonancia fundamental, sección aproximadamente uniforme y volumen físicamente realizable.
+
+La relación de armónicos impares y la dependencia térmica mediante una raíz cuadrada coinciden con el tratamiento de OpenStax, University Physics, capítulo 17:
+https://openstax.org/books/university-physics-volume-1/pages/17-key-equations
+
+METODOLOGÍA — PARCIALMENTE REPRODUCIBLE
+Ubicación: páginas 2–3; 03_metodologia.tex.
+
+Otra persona podría reconstruir la idea general, pero no reproducir las mediciones con suficiente precisión únicamente leyendo el procedimiento.
+
+Faltan:
+- Identificación del generador de frecuencias y configuración del analizador.
+- Posición del micrófono y altavoz, distancia a la abertura y grado de obstrucción.
+- Número real de barridos y repeticiones por condición.
+- Instrumento utilizado para medir agua y origen de ±2 cm³.
+- Lectura del menisco y aclaración de volúmenes acumulados o incrementales.
+- Frecuencias de los diapasones efectivamente empleados.
+- Forma de excitarlos y criterio para reconocer resonancia.
+- Base de las incertidumbres: resolución, tolerancia, dispersión o estimación conservadora.
+
+Contradicciones internas:
+1. El análisis utiliza 100–2300 Hz durante 20 s, pero el pie de Fig. 5 indica 150–2150 Hz.
+2. Metodología deja los volúmenes pendientes de confirmación, mientras el análisis los presenta como realizados.
+3. Metodología afirma que se obtuvo velocidad mediante longitud inversa, pero ese ajuste no aparece.
+4. Metodología afirma comprobar resonancia con diapasones; la Tabla VII no documenta niveles experimentales diferenciados.
+
+Los comentarios que atribuyen otros parámetros a la guía deben verificarse con el documento oficial.
+
+ANÁLISIS — DESARROLLADO, PERO INCOMPLETO Y CON ERRORES
+Ubicación: páginas 3–5; 04_analisis.tex.
+
+Incluye siete tablas y tres figuras de resultados. Los problemas principales son:
+- Falta incertidumbre de las frecuencias medidas.
+- Se confunden índices de modo y números de armónico.
+- Falta explicar la propagación de incertidumbres.
+- No se presenta el ajuste f frente a 1/L'.
+- La Fig. 7 se interpreta como atenuación, aunque sus datos corresponden a frecuencia y longitud.
+- Los resultados experimentales de diapasones requieren confirmación.
+- El cierre de IV-F afirma “valida… la precisión del modelo” con más fuerza de la que permiten los datos.
+
+DISCUSIÓN — DESARROLLADA Y APROVECHABLE
+Ubicación: página 5; 05_discusion.tex.
+
+Es una de las secciones más fuertes, pero necesita revisar cuatro afirmaciones:
+- “Se cumple el tercer objetivo”: el objetivo no está presentado en la introducción.
+- Reproducibilidad frente a incertidumbre del ajuste: comparar dos frecuencias fundamentales con la incertidumbre de una pendiente no evalúa directamente la misma magnitud.
+- Niveles de 64–65 dB: no prueban por sí solos excitación y detección comparables en todos los niveles, especialmente sin calibración ni configuración documentada.
+- Mediciones realizadas una sola vez: es una afirmación que debe confirmar el equipo; la metodología todavía no fija las repeticiones.
+
+La explicación sobre el ajuste exponencial como descripción empírica es más prudente que el texto de análisis, pero ambas secciones deben concordar.
+
+CONCLUSIONES — PENDIENTES
+Ubicación: final de página 5; 06_conclusiones.tex.
+
+Solo aparece “Sintetizar los principales hallazgos…”. No existe contenido evaluable como conclusión científica.
+
+BIBLIOGRAFÍA — ESTRUCTURADA, CON REFERENCIAS SIN RESOLVER
+Ubicación: página 6; referencias.bib.
+
+- Las claves citadas corresponden a entradas existentes.
+- Young/Freedman y Halliday/Resnick/Walker aparecen en la lista final.
+- Serway/Jewett está en el archivo .bib, pero no se cita; su ausencia en el PDF no es un error.
+- El ISBN, edición y año de Halliday coinciden con el registro editorial de Wiley:
+https://uat.store.wiley.com/en-us/fundamentals-of-physics-extended-11th-edition-p-9781119460138
+- Conviene cotejar la edición de Young/Freedman con la portada legal del ejemplar consultado.
+- No hace falta añadir DOI a libros que no lo tengan ni aumentar referencias solo para aparentar mayor profundidad.
+
+La declaración de IA también necesita revisión: afirma que las conclusiones fueron elaboradas y verificadas, aunque actualmente siguen pendientes. El equipo debe confirmar que la declaración describe el uso real.
+
+5. ERRORES CIENTÍFICOS O MATEMÁTICOS
+
+A. LA FIG. 7 NO MIDE ATENUACIÓN
+Ubicación: página 4, IV-D; 04_analisis.tex, línea 230.
+
+El texto atribuye la curva a una disminución de amplitud con distancia o tiempo. Sin embargo, los puntos coinciden con frecuencia de resonancia frente a longitud de aire.
+
+El modelo aplicable es:
+f = v/(4L')
+
+No es una ley de atenuación de amplitud. El ajuste exponencial puede describir una tendencia en un intervalo, pero no identifica ese fenómeno físico.
+
+B. FALTA EL AJUSTE FÍSICO DE LA SERIE CON AGUA
+
+Como comprobación de auditoría, utilizando los siete datos publicados y longitudes calculadas sin redondeo, un ajuste ordinario con intercepto libre produce aproximadamente:
+f = m(1/L') + b
+m = 90,316 m/s
+b = −24,215 Hz
+R² = 0,999284
+
+La interpretación v = 4m daría aproximadamente 361,27 m/s, pero el intercepto negativo exige análisis. Su error estándar ordinario es cercano a 4,81 Hz, por lo que no es despreciable en ese cálculo.
+
+Si se impone intercepto cero, la misma serie da aproximadamente 340,58 m/s.
+
+Estos valores son comprobaciones diagnósticas, no resultados finales propuestos. No incluyen un tratamiento completo de incertidumbres de frecuencia, errores en longitud ni correlaciones entre puntos. Muestran que elegir el ajuste modifica significativamente la velocidad y debe justificarse.
+
+C. LA PROPAGACIÓN USADA ES CONSERVADORA, PERO NO ESTÁ IDENTIFICADA COMO TAL
+Ubicación: páginas 3–4, ecuaciones (12) y (17).
+
+El reporte utiliza sumas lineales:
+ΔL_f = ΔL + 0,3ΔD
+Δv = v(ΔL_f/L_f + Δf/f)
+
+Son admisibles como estimaciones de límites máximos, pero no equivalen a combinar incertidumbres estándar independientes.
+
+Bajo esa segunda interpretación:
+u(L_f) = sqrt[u(L)² + (0,3u(D))²] ≈ 0,5002 mm
+
+Empleando los valores publicados:
+u(v) ≈ 7,22 m/s
+frente a 7,67 m/s por suma lineal.
+
+No corresponde cambiar automáticamente el procedimiento: primero debe definirse qué significa cada símbolo ±. Además, L_f y el área comparten la medición de diámetro; esa dependencia importa al propagar incertidumbres de la serie con agua.
+
+D. INCERTIDUMBRE INCONSISTENTE PARA VOLUMEN CERO
+Ubicación: Tabla VI, página 4.
+
+La fila V = 0 ± 2 cm³ presenta L' = 37,50 ± 0,05 cm. Aplicando la misma suma conservadora utilizada en las demás filas, la incertidumbre sería cercana a 0,15 cm.
+
+Hay dos posibilidades:
+- La condición inicial es una probeta sin agua y no requiere asignar incertidumbre de volumen.
+- Se mantiene 0 ± 2 cm³, y esa contribución debe propagarse.
+
+La tabla mezcla ambas interpretaciones.
+
+E. UNIDAD INCORRECTA EN DIAPASONES
+Ubicación: página 4, IV-E; 04_analisis.tex, línea 248.
+
+Aparece v_T = 345,875 cm/s.
+Debe ser 345,875 m/s, o 34 587,5 cm/s si se opera en centímetros.
+
+Los volúmenes teóricos sí coinciden con la conversión correcta: aproximadamente 73,10; 205,75; 294,17 y 382,60 cm³. Por tanto, la evidencia apunta a un error de unidad en el texto, no en esos valores centrales.
+
+Las incertidumbres de volumen también se pueden reproducir mediante una propagación lineal conservadora, pero falta mostrar su procedimiento y aclarar la incertidumbre de frecuencia de cada diapasón.
+
+F. LOS CEROS DE LA TABLA VII REQUIEREN EXPLICACIÓN
+Ubicación: página 4, Tabla VII.
+
+Los cuatro valores V_agregado = 0 ± 2 cm³ no pueden asumirse automáticamente como resultados válidos ni como marcadores pendientes.
+
+Si son mediciones reales, deben explicarse junto con lo observado. Si son marcadores, no deben presentarse como mediciones. La fotografía demuestra uso de un diapasón, pero no verifica cuatro frecuencias ni sus volúmenes finales.
+
+G. ÍNDICE DE MODO Y NÚMERO DE ARMÓNICO ESTÁN MEZCLADOS
+Ubicación: Tabla III, página 3.
+
+La teoría reserva f_n para n = 1, 3, 5, ...; pero la tabla llama a las cinco resonancias f_1, f_2, f_3, f_4, f_5. Además, presenta n = f_n/f_1 como si los cocientes fueran exactamente enteros.
+
+Los cocientes reales son aproximadamente:
+1; 2,98; 4,81; 7,15; 9,02.
+
+Conviene separar orden de modo, armónico asignado y cociente medido. La asociación con armónicos impares es razonable, pero no constituye igualdad exacta.
+
+H. LA DISCREPANCIA PEQUEÑA NO PRUEBA PRECISIÓN
+Ubicación: página 5, IV-F.
+
+El 1,34 % está bien calculado:
+|345,875 − 341,25| / 345,875 × 100 % = 1,337 %.
+
+Sin embargo, una diferencia pequeña respecto a una referencia no demuestra por sí sola precisión, reproducibilidad ni ausencia de sesgos. La comparación respalda compatibilidad dentro de la incertidumbre reportada, con las limitaciones del modelo.
+
+CÁLCULOS COMPROBADOS COMO CORRECTOS
+- Longitud efectiva: 360 + 0,3(50) = 375 mm.
+- Área interna: 19,63495 cm².
+- Velocidad térmica utilizada: 345,875 m/s a 25 °C.
+- Ajuste ordinario de armónicos: m = 227,539 Hz; b = −13,017 Hz; R² = 0,998668.
+- Errores estándar de ese ajuste: 4,798 Hz y 27,560 Hz.
+- Velocidad con pendiente redondeada: 341,25 m/s.
+- Longitudes de Tabla VI: coherentes con L_f − V/A.
+- Volúmenes teóricos de Tabla VII: coherentes con la velocidad correctamente convertida.
+
+Los dos decimales mostrados por la aplicación no equivalen a una incertidumbre de 0,01 Hz. La captura muestra resolución espectral de 1,3458 Hz, que tampoco representa automáticamente toda la incertidumbre experimental.
+
+6. PROBLEMAS DE FORMATO Y PRESENTACIÓN
+
+INSPECCIÓN PÁGINA POR PÁGINA
+
+Página 1:
+Resumen, palabras clave e introducción sin elaborar. Citas [?] en teoría. Aparece una instrucción literal sobre citas. La composición general es legible.
+
+Página 2:
+Referencias a ecuaciones y figuras como ??. Las Figs. 1–4 aparecen antes del desarrollo que las introduce. En Fig. 3 la etiqueta “columna de aire” invade las paredes y el esquema no muestra la corrección de extremo.
+
+Página 3:
+Tabla I excesivamente reducida: encabezados y valores resultan difíciles de leer. La ecuación (11) es larga y su número queda debajo. Fig. 5 y Tabla III presentan intervalos de barrido distintos. Numerosas referencias ??.
+
+Página 4:
+Figs. 6–7 con ejes X/Y, sin variables ni unidades. Separación amplia entre Fig. 6 y la continuación del cálculo. Tabla VII compacta. Referencias ?? y unidad errónea de velocidad en IV-E.
+
+Página 5:
+La discusión es legible, pero las conclusiones siguen siendo una instrucción de plantilla. Las referencias escritas manualmente, como “Tabla III” o “Fig. 7”, funcionan visualmente pero son frágiles ante cambios de numeración.
+
+Página 6:
+Solo declaración de IA y bibliografía en la columna izquierda; queda gran parte de la página vacía. Conviene revisar la distribución cuando estén completas las secciones.
+
+No se observaron ecuaciones cortadas, superposición grave de tablas ni una numeración consecutiva incorrecta. El principal problema de referencias es que los enlaces internos no se resolvieron.
+
+Sin el .log, no se puede afirmar qué advertencias de compilación se produjeron. El aspecto del PDF es compatible con referencias no actualizadas, pero no prueba una causa específica.
+
+EVALUACIÓN DE IMÁGENES
+
+Fig. 1: teléfono y probeta.
+Pertinente y suficientemente nítida. El encuadre incluye mucho entorno. Un recorte centrado en abertura y teléfono permitiría apreciar mejor el montaje.
+
+Fig. 2: probeta con agua.
+Pertinente como evidencia general, pero el nivel y menisco no se distinguen bien al tamaño publicado. Mantener si se mejora su legibilidad; sustituir solo si existe una fotografía más informativa.
+
+Fig. 3: esquema.
+Útil, pero necesita distinguir longitud geométrica y efectiva, superficie de cierre y posición de transductores. Ampliar el espacio para etiquetas.
+
+Fig. 4: diapasón.
+Documenta la actividad, aunque el montaje queda pequeño y parcialmente oculto. Recortar para destacar diapasón y abertura. No usarla como prueba de los cuatro resultados.
+
+Fig. 5: espectro.
+Aporta frecuencia y resolución espectral. Explicar qué representan las trazas roja y verde, y las lecturas Peak, Cursor y Max. El nombre del archivo no demuestra el intervalo del barrido.
+
+Fig. 6: ajuste de armónicos.
+Datos y curva legibles. Rotular n y f_n en Hz; precisar el pie y mostrar incertidumbres cuando estén definidas.
+
+Fig. 7: ajuste exponencial.
+Visualmente legible, pero debe corregirse su interpretación y priorizar el ajuste del modelo físico. Rotular las variables reales.
+
+Hay cinco imágenes no incorporadas al PDF:
+- datos_tabla3.jpeg y datos_tabla6.jpeg: capturas de estadísticas de ajustes, no fotografías de tablas originales del cuaderno.
+- 200_1000Hz1.jpeg, 200_1000Hz2.jpeg y 200_1000Hz3.jpeg: documentan configuración 200–1000 Hz, 10 s y máximos de 242,92; 280,29 y 596,73 Hz.
+
+No es necesario incluirlas todas. Aportan trazabilidad y pueden conservarse como respaldo o material complementario.
+
+7. CALIFICACIÓN ESTIMADA
+
+A. ESTADO ACTUAL: 5,65/10
+
+Las pérdidas principales provienen de:
+- Conclusiones inexistentes.
+- Resumen e introducción pendientes.
+- Procedimiento insuficientemente reproducible.
+- Ausencia del ajuste físico de la serie con agua.
+- Interpretación incorrecta de la Fig. 7.
+- Incertidumbres incompletas o ambiguas.
+- Resultados de diapasones sin trazabilidad suficiente.
+- Citas y referencias internas sin resolver.
+
+La nota reconoce el contenido desarrollado de teoría, análisis y discusión; no supone que las secciones pendientes serán completadas.
+
+B. POTENCIAL: APROXIMADAMENTE 9–9,5/10
+
+Es alcanzable si existen registros suficientes para confirmar procedimientos y resultados, y se corrigen los problemas indicados. El máximo nominal de la rúbrica es 10, pero no puede anticiparse sin verificar esos registros y el documento oficial.
+
+La ausencia de Tabla 8 no reduce ninguna de estas estimaciones.
+
+8. PLAN DE MEJORAS PRIORIZADO
+
+Las recuperaciones indicadas se solapan entre criterios; no deben sumarse como puntos independientes.
+
+PRIORIDAD ALTA
+
+1. Confirmar barridos, volúmenes, repeticiones y diapasones.
+Motivo: resolver contradicciones antes de redactar como hechos.
+Recuperación orientativa: 0,4–0,8 puntos.
+Secciones: metodología, análisis y discusión.
+Información necesaria: cuaderno y confirmación del equipo.
+
+2. Realizar el ajuste f frente a 1/L', analizar intercepto y calcular velocidad.
+Motivo: completar el contraste físico de agua.
+Recuperación orientativa: 0,5–0,9 puntos.
+Secciones: IV-D, discusión, Fig. 7.
+Información necesaria: datos ya publicados; incertidumbres por confirmar.
+
+3. Eliminar la interpretación de atenuación y revisar las afirmaciones de validación.
+Motivo: evitar conclusiones científicas injustificadas.
+Recuperación orientativa: 0,2–0,4 puntos.
+Secciones: IV-D, IV-F y discusión.
+Información necesaria: no requiere nuevos datos para corregir el concepto.
+
+4. Definir y propagar incertidumbres consistentemente, incluidas frecuencias y dependencias comunes.
+Recuperación orientativa: 0,3–0,6 puntos.
+Secciones: tablas I–VII y cálculos.
+Información necesaria: base de cada ±, configuración y registros.
+
+5. Completar introducción, resumen y conclusiones después de cerrar el análisis.
+Recuperación orientativa: 1,0–1,4 puntos.
+Archivos: 01_resumen.tex, 02_introduccion.tex, 06_conclusiones.tex.
+Información necesaria: objetivos oficiales y resultados verificados.
+
+6. Aclarar los ceros de Tabla VII y corregir la unidad de velocidad.
+Motivo: recuperar integridad de la comparación con diapasones.
+Recuperación orientativa: 0,2–0,4 puntos.
+Secciones: IV-E y metodología.
+Información necesaria: volúmenes finales y observaciones reales.
+
+PRIORIDAD MEDIA
+
+7. Resolver citas y referencias mediante compilación completa posterior.
+Recuperación orientativa: 0,3–0,5 puntos.
+Archivos: main.tex, bibliografía y referencias internas.
+Información necesaria: herramientas de compilación.
+
+8. Rotular gráficas, mejorar Tabla I y precisar esquema y fotografías.
+Recuperación orientativa: 0,2–0,4 puntos.
+Secciones/archivos: imágenes, metodología y análisis.
+Información necesaria: originales disponibles.
+
+9. Verificar fuente de aproximación térmica, corrección de extremo y edición consultada.
+Recuperación orientativa: 0,1–0,2 puntos.
+Secciones: marco teórico y bibliografía.
+Información necesaria: guía y ejemplares consultados.
+
+PRIORIDAD BAJA
+
+10. Uniformar cifras significativas, notación, títulos y referencias automáticas.
+Recuperación orientativa: 0,05–0,15 puntos.
+Secciones: todo el documento.
+Información necesaria: convención de incertidumbre adoptada.
+
+11. Revisar distribución final y declaración de IA.
+Recuperación orientativa: impacto menor.
+Archivos: main.tex y declaración.
+Información necesaria: confirmación del uso real de IA.
+
+9. DATOS FALTANTES
+
+YA DISPONIBLES EN EL PROYECTO
+
+- Geometría y temperatura declaradas con incertidumbres.
+- Cinco frecuencias de resonancia y siete pares volumen–frecuencia.
+- Longitudes efectivas calculables.
+- Estadísticas del ajuste lineal de armónicos.
+- Estadísticas del ajuste exponencial existente.
+- Fotografías del montaje.
+- Capturas de tres máximos de la serie con agua.
+- Resolución FFT visible de 1,3458 Hz.
+- Bibliografía estructurada en BibTeX.
+
+Estos elementos pueden reutilizarse; no deben solicitarse como si estuvieran ausentes.
+
+POSIBLEMENTE RECUPERABLES DEL CUADERNO
+
+- Lecturas originales de profundidad, diámetro y temperatura.
+- Frecuencias por repetición.
+- Volúmenes realmente utilizados y secuencia de adición.
+- Volúmenes finales de resonancia con cada diapasón.
+- Observaciones de resonancia o ausencia de ella.
+- Configuración del barrido inicial.
+- Identificación de instrumentos y resolución volumétrica.
+
+Las tablas del cuaderno aparecen dentro de algunas fotografías generales, pero no tienen legibilidad suficiente para transcribirlas con confianza.
+
+DEBE CONFIRMAR EL EQUIPO
+
+- Guía oficial y rúbrica completa.
+- Objetivos exactos.
+- Número real de mediciones y repeticiones.
+- Origen de todas las incertidumbres.
+- Intervalo y duración del barrido inicial.
+- Significado de los cuatro ceros de Tabla VII.
+- Diapasones efectivamente utilizados.
+- Posición del teléfono y configuración de ambas aplicaciones.
+- Correspondencia entre capturas y volúmenes.
+- Veracidad de las afirmaciones sobre mediciones únicas y uso de IA.
+
+NO RECUPERABLE DE FORMA FIABLE SI NUNCA SE REGISTRÓ
+
+- Dispersión experimental entre repeticiones no realizadas.
+- Volúmenes finales o resultados de diapasones no anotados.
+- Anchos de picos sin espectros suficientemente detallados.
+- Evolución temporal de temperatura no medida.
+- Nivel acústico absoluto sin calibración.
+- Humedad y otras condiciones ambientales no registradas.
+
+En esos casos corresponde declarar la limitación o realizar nuevas mediciones, si fuera posible. No reconstruir datos como si hubieran sido observados.
+
+10. PRÓXIMOS CINCO PASOS RECOMENDADOS
+
+1. Reunir la guía, la rúbrica y los registros legibles del cuaderno, especialmente barrido inicial y diapasones.
+2. Resolver las contradicciones experimentales y definir el significado de cada incertidumbre.
+3. Completar la auditoría numérica de agua, justificar el ajuste y corregir interpretación, unidades y notación.
+4. Redactar las secciones pendientes utilizando objetivos y resultados ya verificados.
+5. Compilar y revisar nuevamente las seis páginas o la extensión final, eliminando ??, [?] y problemas de legibilidad.
