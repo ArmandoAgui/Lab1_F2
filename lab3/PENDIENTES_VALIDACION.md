@@ -10,7 +10,7 @@ La guía oficial suministrada se conserva en `references/guia_practica3_II2026.p
 - **Repeticiones:** confirmar cuántos barridos se realizaron en cada condición y si las frecuencias registradas son lecturas individuales o resultados de varias lecturas. Las dos repeticiones prescritas no se presentan como un hecho observado.
 - **Volúmenes de agua:** confirmar que 0, 75, 150, 225, 300, 375 y 450 cm³ son los niveles realmente utilizados. Se conservaron las tablas originales, pero no existe una transcripción legible del cuaderno independiente de ellas. Confirmar si se añadieron incrementos de 75 cm³ hasta alcanzar esos volúmenes totales.
 - **Nivel de 50 mL:** la guía lo menciona al inicio de la parte II, pero no está entre los siete datos. No se inventó una medición ni se alteraron los volúmenes existentes.
-- **Diapasones:** precisar qué frecuencias se usaron, cómo se excitaron, cuál fue el criterio de resonancia y los volúmenes finales. Los cuatro registros originales eran `0 ± 2 cm³` para 256, 320, 384 y 480 Hz. Su significado no está confirmado: se sustituyeron por «NV» en la tabla publicada, sin convertirlos en errores porcentuales. Las predicciones teóricas se mantienen.
+- **Diapasones (aclaración incorporada):** el equipo confirmó el uso de los cuatro diapasones de 256, 320, 384 y 480 Hz, con respuesta resonante audible y sin agregar agua adicional. La Tabla VII registra cuatro ceros de volumen adicional, sin asignarles una incerteza no confirmada. Falta un registro diferenciado del volumen total en cada prueba para contrastar cuantitativamente las predicciones.
 - **Declaración de IA:** confirmar la descripción del apoyo realmente utilizado y realizar la revisión final del equipo. El reporte no afirma que esa validación ya ocurrió.
 - **Rúbrica del artículo:** proporcionar el documento oficial si se dispone de él. La preparación y lista de cotejo del cuaderno no sustituyen los 17 criterios del artículo.
 
@@ -25,13 +25,13 @@ La guía oficial suministrada se conserva en `references/guia_practica3_II2026.p
 ## 3. Limitaciones declaradas si no existen registros
 
 - Sin repeticiones documentadas, la diferencia entre series no estima reproducibilidad estadística.
-- Sin volúmenes finales de diapasones no puede verificarse su resonancia para cuatro condiciones ni calcular el error relativo experimental.
+- La respuesta resonante de los cuatro diapasones está confirmada cualitativamente; sin sus volúmenes totales diferenciados no puede calcularse el error relativo de volumen.
 - Sin calibración no se interpretan los dB de la aplicación como nivel acústico absoluto.
 - Sin posiciones y geometría documentadas no puede cuantificarse el efecto de la abertura parcialmente cubierta.
 
 ## Incertezas: alcance solicitado por el usuario
 
-El usuario pidió pasar por alto la información de incertezas que no tiene disponible. No se solicitaron datos adicionales ni se reconstruyó su origen. Se conservan las incertezas previamente tabuladas (incluida la fila de volumen cero) sin afirmar que estén validadas. Los nuevos errores estándar de regresión se calculan desde los residuos y se distinguen de la incertidumbre experimental total; no se añaden barras de frecuencia inventadas. La evaluación mantiene esta limitación, sin tratar su ausencia como requisito resuelto.
+El usuario pidió pasar por alto información adicional de incertezas. La Tabla VI se conserva exactamente, incluidas las incertezas proporcionadas por el instructor y la fila de volumen cero. No se solicita reconstruirlas. Los errores estándar de regresión existentes se distinguen de la incertidumbre experimental total; en esta revisión no se recalcularon los ajustes.
 
 ## Respaldo y trazabilidad
 

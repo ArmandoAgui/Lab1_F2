@@ -50,7 +50,7 @@ Las incertezas instrumentales y propagadas ya presentes se conservan sin asignar
 La Tabla~\ref{tab:armonicos} conserva las cinco frecuencias registradas y distingue el orden observado $k$, el cociente experimental y el armónico asignado $n$. Los cocientes próximos a $1,3,5,7,9$ son compatibles con la estructura modal del tubo cerrado, aunque presentan desviaciones respecto de múltiplos exactos.
 \begin{table}[!t]
 \centering
-\caption{Resonancias registradas y armónicos asignados. La configuración inicial del barrido permanece sin confirmar.}
+\caption{Resonancias registradas y armónicos asignados.}
 \label{tab:armonicos}
 \begin{tabular}{cccc}
 \toprule
@@ -67,22 +67,21 @@ Orden $k$ & $f_n$ (Hz) & $f_n/f_1$ & Armónico $n$\\
 \begin{figure}[!t]
 \centering
 \includegraphics[width=.77\columnwidth]{150_2150Hz.jpeg}
-\caption{Espectro registrado: la lectura \textit{Max} indica 225.22 Hz. La imagen muestra FFT de 16384 puntos y resolución de 1.3458 Hz, pero no la configuración del generador. Los niveles en dB no se interpretan como medidas acústicas absolutas.}
+\caption{Espectro registrado con un máximo de 225.22 Hz, FFT de 16384 puntos y resolución de 1.3458 Hz. Los niveles mostrados son indicadores de la aplicación.}
 \label{fig:espectro_barrido}
 \end{figure}
 
-El ajuste $f_n=m_hn+b_h$ se recalculó desde las frecuencias de la Tabla~\ref{tab:armonicos}. Para $N$ puntos, $x_i=n_i$ o $x_i=1/L'_i$, y $y_i=f_i$, se emplearon:
+El ajuste $f_n=m_hn+b_h$ se recalculó desde las frecuencias de la Tabla~\ref{tab:armonicos}. Para $N$ puntos, con $x_i=n_i$ o $1/L'_i$ y $y_i=f_i$, se definió $S_{xx}=\sum_i(x_i-\bar x)^2$ y se emplearon:
 \begin{equation}
 \begin{aligned}
-S_{xx}&=\sum_i(x_i-\bar x)^2,\\
 m&=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{S_{xx}},\quad
 b=\bar y-m\bar x.
 \end{aligned}
 \label{eq:ols}
 \end{equation}
+Con $s^2=\sum_i(y_i-mx_i-b)^2/(N-2)$, los errores estándar fueron:
 \begin{equation}
 \begin{aligned}
-s^2&=\frac{\sum_i(y_i-mx_i-b)^2}{N-2},\\
 s_m&=\frac{s}{\sqrt{S_{xx}}},\qquad
 s_b=s\sqrt{\frac1N+\frac{\bar x^2}{S_{xx}}}.
 \end{aligned}
@@ -108,7 +107,7 @@ $227.5\pm4.8$ & $-13\pm28$ & 0.9987\\
 \begin{figure}[!t]
 \centering
 \input{figures/armonicos}
-\caption{Frecuencia frente a armónico asignado: $f_n=(227.539\ \mathrm{Hz})n-13.017\ \mathrm{Hz}$, $R^2=0.998668$. No se añaden barras de error de frecuencia sin respaldo experimental.}
+\caption{Frecuencia frente a armónico asignado: $f_n=(227.539\ \mathrm{Hz})n-13.017\ \mathrm{Hz}$, $R^2=0.998668$.}
 \label{fig:grafico_lineal}
 \end{figure}
 El intercepto es compatible con cero en la escala de su error estándar. El coeficiente $R^2$ muestra una tendencia lineal fuerte, pero no demuestra por sí solo ausencia de sesgos.
@@ -142,7 +141,7 @@ e_h=\frac{|v_h-v_T|}{v_T}\,100\%=1.32\%.
 La diferencia de 4.57 m/s es menor que la incerteza conservada de 7.7 m/s. Esto indica concordancia en esa escala, sin establecer una compatibilidad con nivel de confianza definido.
 
 \subsection{Serie con agua: relación frecuencia--longitud}
-El área interna es $A=\pi D^2/4=19.634954$ cm$^2$, presentada como $(19.635\pm0.039)$ cm$^2$ con la incerteza original. Las longitudes de la Tabla~\ref{tab:resonancia_agua} se calcularon a partir de los volúmenes registrados, sin redondear antes de los ajustes. Se mantienen las incertezas tabuladas; no se reconstruye su origen.
+El área interna es $A=\pi D^2/4=19.634954$ cm$^2$, presentada como $(19.635\pm0.039)$ cm$^2$ con la incerteza original. Las longitudes de la Tabla~\ref{tab:resonancia_agua} se calcularon a partir de los volúmenes registrados, sin redondear antes de los ajustes. Se conservaron las incertezas indicadas por el instructor.
 \begin{table}[!t]
 \centering
 \caption{Serie con agua. Valores e incertezas originales; $L'$ es la longitud efectiva, no la geométrica.}
@@ -161,11 +160,11 @@ $450.0\pm2.0$ & $14.58\pm0.20$ & 596.73\\
 \bottomrule
 \end{tabular}
 \end{table}
-La frecuencia aumenta de 218.23 a 596.73 Hz cuando $L'$ disminuye de 37.50 a 14.58 cm. La Fig.~\ref{fig:agua_longitud} muestra una tendencia inversa, no una atenuación de amplitud. Se sustituyó el ajuste exponencial anterior por el contraste con $f=v_T/(4L')$.
+La frecuencia aumenta de 218.23 a 596.73 Hz cuando $L'$ disminuye de 37.50 a 14.58 cm. La Fig.~\ref{fig:agua_longitud} muestra la tendencia inversa y su comparación con $f=v_T/(4L')$.
 \begin{figure}[!t]
 \centering
 \input{figures/agua_longitud}
-\caption{Frecuencia frente a longitud efectiva. La curva es la predicción térmica $f=v_T/(4L')$, con $v_T=345.875$ m/s, y no un ajuste de atenuación.}
+\caption{Frecuencia frente a longitud efectiva. La curva es la predicción térmica $f=v_T/(4L')$, con $v_T=345.875$ m/s, para el modelo de tubo cerrado.}
 \label{fig:agua_longitud}
 \end{figure}
 
@@ -194,21 +193,21 @@ El intercepto se aparta de cero en unas cinco veces su error estándar condicion
 
 Como contraste físico, imponer el origen produce $m_0=85.1457$ m/s y $v_0=340.6$ m/s, con error estándar condicional de 3.0 m/s y discrepancia de 1.53\%. La suma de residuos cuadrados pasa de 78.32 Hz$^2$ (libre) a 474.62 Hz$^2$ (origen), y los residuos del ajuste al origen cambian de negativos a positivos al acortarse la columna. Su cercanía al valor térmico no basta para preferirlo.
 
-\subsection{Predicción para diapasones}
-Se recalculó la Ec.~\eqref{eq:volumen_resonancia} con $D=5.000$ cm, $L_f=37.50$ cm y $v_T=34587.5$ cm/s. Todos los volúmenes predichos están entre cero y $AL\approx706.9$ cm$^3$ y dentro de la capacidad nominal de 500 mL indicada por la guía. La Tabla~\ref{tab:diapasones} conserva las incertezas teóricas originales, sin atribuirles una cobertura no documentada.
+\subsection{Predicción y observaciones con diapasones}
+Se recalculó la Ec.~\eqref{eq:volumen_resonancia} con $D=5.000$ cm, $L_f=37.50$ cm y $v_T=34587.5$ cm/s. Todos los volúmenes predichos están entre cero y $AL\approx706.9$ cm$^3$ y dentro de la capacidad nominal de 500 mL indicada por la guía. La Tabla~\ref{tab:diapasones} conserva las predicciones y sus incertezas originales, junto con el volumen adicional agregado en cada prueba.
 \begin{table}[!t]
 \centering
-\caption{Predicciones para las frecuencias de diapasones de la guía. NV: volumen experimental no verificable con los registros disponibles.}
+\caption{Volumen total teórico de resonancia y agua adicional agregada en las pruebas con diapasones.}
 \label{tab:diapasones}
 \begin{tabular}{cccc}
 \toprule
-Nota & $f$ (Hz) & $V_{\mathrm{teo}}$ (cm$^3$) & $V_{\mathrm{exp}}$ (cm$^3$)\\
+Nota & $f$ (Hz) & \shortstack{$V_{\mathrm{teo}}$\\(cm$^3$)} & \shortstack{Agua adicional\\agregada (cm$^3$)}\\
 \midrule
-C' & 256 & $73.10\pm2.28$ & NV\\
-E' & 320 & $205.75\pm2.32$ & NV\\
-G' & 384 & $294.17\pm2.35$ & NV\\
-B' & 480 & $382.60\pm2.37$ & NV\\
+C' & 256 & $73.10\pm2.28$ & 0\\
+E' & 320 & $205.75\pm2.32$ & 0\\
+G' & 384 & $294.17\pm2.35$ & 0\\
+B' & 480 & $382.60\pm2.37$ & 0\\
 \bottomrule
 \end{tabular}
 \end{table}
-Los cuatro ceros del reporte anterior se preservan en el respaldo y en el registro de validación, pero no se interpretan como mediciones confirmadas. En ausencia de volúmenes experimentales verificables no se calcula su error relativo. La fotografía evidencia una actividad con diapasón, no el resultado de las cuatro condiciones.
+El equipo confirmó que se utilizaron los cuatro diapasones y se escuchó una respuesta resonante en cada prueba, sin agregar agua adicional. Los ceros representan ese volumen adicional, no el volumen total presente. Por ello, no se comparan directamente con $V_{\mathrm{teo}}$ ni se calcula un error porcentual: falta una medición diferenciada del volumen total de resonancia para cada diapasón. Los resultados constituyen una observación cualitativa, no una comprobación cuantitativa de los niveles predichos.

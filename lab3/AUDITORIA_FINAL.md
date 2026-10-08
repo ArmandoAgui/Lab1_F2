@@ -1,4 +1,6 @@
-# Auditoría final — Laboratorio 3 de Física II
+# Auditoría de la corrección integral — versión anterior
+
+**Registro histórico:** esta evaluación precede a la aclaración sobre los cuatro diapasones. La revisión vigente y su estimación están en [REVISION_FINAL.md](REVISION_FINAL.md).
 
 ## Resultado y alcance
 

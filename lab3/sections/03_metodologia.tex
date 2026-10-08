@@ -1,11 +1,9 @@
 \section{Metodología}
-\subsection{Caracterización y alcance de los registros}
-El reporte original registra la profundidad con una regla, el diámetro interno con un calibrador Vernier y la temperatura con un termómetro. Los valores consignados son $L=(360.0\pm0.5)$ mm, $D=(50.00\pm0.05)$ mm y $T=(25.0\pm1.0)$ \si{\degreeCelsius}. Se conservan las incertezas registradas; no se deducen resoluciones instrumentales ni repeticiones que no estén documentadas. La longitud efectiva se obtuvo con la Ec.~\eqref{eq:correccion_extremo}. La guía describe una probeta de 500 mL y un beaker de 1000 mL, pero el instrumento de dosificación del agua no está identificado en los registros \cite{guiauca}.
+\subsection{Caracterización de la probeta}
+Se midió la profundidad de la probeta con una regla, su diámetro interno con un calibrador Vernier y la temperatura ambiente con un termómetro. Se registraron $L=(360.0\pm0.5)$ mm, $D=(50.00\pm0.05)$ mm y $T=(25.0\pm1.0)$ \si{\degreeCelsius}. Se determinó la longitud efectiva mediante la Ec.~\eqref{eq:correccion_extremo} y se calculó la referencia térmica con la Ec.~\eqref{eq:velocidad_temperatura}.
 
-\subsection{Barridos e identificación de resonancias}
-Las fotografías muestran un teléfono sobre la boca de la probeta (Fig.~\ref{fig:montaje_frecuencias}). Se emplearon un generador de barrido y un analizador de espectros identificado en el reporte como \textit{Spectroid}. Se localizaron máximos espectrales para asociar las frecuencias con modos del resonador. No consta la posición precisa del micrófono y altavoz ni la fracción de boca obstruida; el esquema de la Fig.~\ref{fig:esquema_montaje} representa la geometría acústica y no una localización verificada de ambos transductores.
-
-La configuración inicial no puede establecerse de forma inequívoca. El reporte original y la Tabla 3 de la guía consignan 100--2300 Hz y 20 s, mientras que el procedimiento de la misma guía prescribe 150--2150 Hz y 10 s, repetido dos veces. La captura de la Fig.~\ref{fig:espectro_barrido} no muestra el generador. Por ello, se conservan las frecuencias registradas sin atribuirles un barrido o un número de repeticiones no confirmado.
+\subsection{Identificación de resonancias}
+Se colocó el teléfono sobre la boca de la probeta (Fig.~\ref{fig:montaje_frecuencias}) y se utilizó un generador de barrido junto con el analizador de espectros \textit{Spectroid}. Se identificaron los máximos del espectro y se registraron cinco frecuencias de resonancia. Los cocientes respecto de la primera frecuencia se emplearon para asignar los armónicos impares. La Fig.~\ref{fig:esquema_montaje} distingue la longitud geométrica y la efectiva de la columna de aire.
 
 \begin{figure}[!t]
 \centering
@@ -25,24 +23,22 @@ La configuración inicial no puede establecerse de forma inequívoca. El reporte
 \begin{figure}[!t]
 \centering
 \input{figures/montaje}
-\caption{Geometría acústica esquemática: $\ell$ es la longitud física y $L'=\ell+0.3D$ la efectiva. La ubicación del teléfono es orientativa; la posición precisa de sus transductores no está documentada. No está a escala.}
+\caption{Geometría acústica esquemática: $\ell$ es la longitud física y $L'=\ell+0.3D$ la efectiva. La ubicación del teléfono es esquemática. No está a escala.}
 \label{fig:esquema_montaje}
 \end{figure}
 
-\subsection{Serie con agua y tratamiento numérico}
-La serie disponible comprende volúmenes totales de 0, 75, 150, 225, 300, 375 y 450 cm$^3$. Esos valores se utilizan como $V$ en $L'=L_f-V/A$; la secuencia de dosificación, la lectura del menisco y las repeticiones no están registradas. La guía menciona inicialmente 50 mL, pero ese nivel no aparece entre los siete datos disponibles, por lo que no se incorpora como una medición.
+\subsection{Variación de la columna de aire y ajustes}
+Se varió la columna de aire mediante agua (Fig.~\ref{fig:columna_aire}) y se registraron las frecuencias correspondientes a los volúmenes totales de 0, 75, 150, 225, 300, 375 y 450 cm$^3$. Las capturas de esta etapa mostraron barridos de 200--1000 Hz durante 10 s. Para cada volumen se calculó $L'=L_f-V/A$, con $A=\pi D^2/4$.
 
-Tres capturas muestran un barrido de 200--1000 Hz durante 10 s, con máximos de 242.92, 280.29 y 596.73 Hz. Coinciden con valores de la serie, aunque la asociación de cada captura con el volumen proviene de la tabla original, no de una etiqueta en la imagen. La guía solicita una captura representativa; los archivos originales se conservan como respaldo.
+Se ajustaron $f_n$ frente a $n$ y $f$ frente a $1/L'$ mediante mínimos cuadrados ordinarios, sin ponderación. Se calcularon las pendientes, los interceptos y sus errores estándar a partir de los residuos, tratando la coordenada horizontal como fija y evitando redondeos intermedios en las longitudes.
 
-Se ajustaron $f_n$ frente a $n$ y $f$ frente a $1/L'$ mediante mínimos cuadrados ordinarios, sin ponderación. Se calcularon pendientes, interceptos y errores estándar a partir de los residuos; se trató la variable horizontal como fija. Las longitudes para el ajuste se calcularon sin redondeo intermedio. No se añadieron barras de error de frecuencia al faltar una incertidumbre documentada por medición.
-
-\subsection{Diapasones y actividad excluida}
-La Fig.~\ref{fig:resonancia_diapason} documenta el empleo de un diapasón junto a la probeta. Se recalcularon los volúmenes teóricos para 256, 320, 384 y 480 Hz, frecuencias indicadas por la guía. No puede verificarse que las cuatro pruebas se realizaran ni su forma de excitación, criterio de resonancia y volumen final. La comparación experimental se declara no verificable con el registro disponible.
+\subsection{Pruebas con diapasones}
+Se utilizaron los cuatro diapasones de 256, 320, 384 y 480 Hz. Se calcularon los volúmenes teóricos mediante la Ec.~\eqref{eq:volumen_resonancia} y se realizaron las pruebas junto a la boca de la probeta (Fig.~\ref{fig:resonancia_diapason}). En las cuatro pruebas se escuchó una respuesta resonante sin necesidad de agregar agua adicional.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=.52\columnwidth]{diapasonprobeta.jpeg}
-\caption{Registro fotográfico del uso de un diapasón junto a la boca de la probeta; no permite identificar su frecuencia ni el volumen final de resonancia.}
+\caption{Uso de un diapasón junto a la boca de la probeta durante las pruebas de resonancia.}
 \label{fig:resonancia_diapason}
 \end{figure}
-La actividad de la Tabla 8 no se realizó por indicación de la instructora y queda excluida del alcance experimental.
+La actividad de la Tabla 8 se excluyó por indicación de la instructora.
