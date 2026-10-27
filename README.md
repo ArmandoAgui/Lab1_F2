@@ -4,7 +4,8 @@ El repositorio contiene un directorio independiente para cada práctica:
 
 - `lab1/`: reporte final de la Práctica 1, con su fuente LaTeX, imágenes, tablas, bibliografía y plantilla IEEE.
 - `lab2/`: reporte de la Práctica 2.
-- `lab3/`: estructura inicial para desarrollar el reporte de la Práctica 3.
+- `lab3/`: reporte de la Práctica 3.
+- `lab4/`: estructura inicial IEEE para desarrollar el reporte de la Práctica 4.
 
 Cada laboratorio se compila desde su propia carpeta, por lo que las rutas relativas a imágenes, secciones y bibliografía permanecen separadas.
 
@@ -20,4 +21,4 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-Para otro reporte, sustituye `lab1` por `lab2` o `lab3`.
+Para otro reporte, sustituye `lab1` por `lab2`, `lab3` o `lab4`. Para la plantilla del Lab 4 sin citas todavía, consulta las instrucciones de `lab4/README.md`.
