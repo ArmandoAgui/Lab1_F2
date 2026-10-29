@@ -1,0 +1,47 @@
+% Corte esquemático del montaje, sin escala ni detalles constructivos.
+% Dimensiones y fuentes elegidas para una columna IEEE sin reescalado.
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  font=\footnotesize,
+  line width=0.6pt,
+  every node/.style={inner sep=2pt},
+  indicador/.style={-{Stealth[length=1.3mm]},thin}
+]
+  % Pared y fondo del recipiente; el corte permite mostrar el contenido.
+  \draw[fill=gray!20,rounded corners=3pt]
+    (2.3,3.35)--(2.3,1.05)--(5.7,1.05)--(5.7,3.35);
+  \fill[white] (2.55,3.36) rectangle (5.45,1.30);
+  \fill[gray!10] (2.55,1.30) rectangle (5.45,2.65);
+  \draw (2.55,3.35)--(2.55,1.30)--(5.45,1.30)--(5.45,3.35);
+  \draw[thin] (2.55,2.65)--(5.45,2.65);
+
+  % Tapa con pasos independientes para el termómetro y el agitador.
+  \draw[fill=gray!30] (2.15,3.35) rectangle (5.85,3.55);
+
+  % Termómetro: vástago, bulbo y marcas sin lecturas experimentales.
+  \draw[fill=white,rounded corners=1pt] (3.10,2.00) rectangle (3.30,5.40);
+  \draw[line width=0.8pt] (3.20,2.12)--(3.20,4.97);
+  \draw[fill=gray!60] (3.20,2.05) circle (0.12);
+  \foreach \altura in {3.80,4.05,4.30,4.55,4.80,5.05}
+    \draw[thin] (3.12,\altura)--(3.22,\altura);
+
+  % Agitador manual sumergido y mango sobre la tapa.
+  \draw[fill=gray!40] (4.55,1.90) rectangle (4.65,4.25);
+  \draw[fill=gray!50,rounded corners=1pt] (4.40,4.15) rectangle (4.80,4.55);
+  \draw[line width=1pt] (4.10,1.90)--(5.10,1.90);
+
+  % Etiquetas externas y líneas de llamada, separadas del instrumental.
+  \node[anchor=west] at (0.00,5.10) {Termómetro};
+  \draw[indicador] (1.85,5.10)--(3.08,5.10);
+  \node[anchor=east] at (8.20,4.70) {Agitador};
+  \draw[indicador] (6.50,4.70)--(5.20,4.70)--(4.82,4.40);
+  \node[anchor=west] at (0.00,3.75) {Tapa};
+  \draw[indicador] (1.05,3.75)--(1.75,3.75)--(2.30,3.50);
+  \node[anchor=east] at (8.20,2.75) {Agua};
+  \draw[indicador] (7.15,2.75)--(6.10,2.75)--(5.05,2.35);
+  \node[anchor=east,align=right] at (8.20,1.35) {Recipiente\\exterior};
+  \draw[indicador] (6.45,1.35)--(5.72,1.35);
+  \node at (4.00,0.62) {Calorímetro};
+  \node[font=\scriptsize] at (4.00,0.10)
+    {Sistema aproximadamente aislado; esquema sin escala.};
+\end{tikzpicture}
