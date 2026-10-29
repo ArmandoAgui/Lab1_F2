@@ -57,7 +57,12 @@ donde $m_h$ es la masa efectiva de hielo y $L_f=80\,\mathrm{cal}/\mathrm{g}$ es 
     \label{eq:calor_hielo}
 \end{equation}
 
-Aquí $T_h$ representa la temperatura de fusión. La expresión no describe hielo inicialmente por debajo de $0\,{}^{\circ}\mathrm{C}$, cuyo calentamiento previo requeriría un término adicional. En el análisis se evalúa en $T=T_{\mathrm{exp}}$.
+Aquí $T_h$ representa la temperatura de fusión. Según la hipótesis experimental de la guía \cite{guiauca4}, se adopta como constante del modelo:
+\begin{equation}
+  T_h=0\,{}^{\circ}\mathrm{C},\qquad \Delta T_h=0\,{}^{\circ}\mathrm{C}.
+  \label{eq:hipotesis_temperatura_hielo}
+\end{equation}
+No corresponde a una medición independiente del termómetro. Una desviación real respecto a esta temperatura constituye una posible limitación del modelo, sin una incertidumbre instrumental medida que pueda asignarse a $T_h$. La expresión no describe hielo inicialmente por debajo de $0\,{}^{\circ}\mathrm{C}$, cuyo calentamiento previo requeriría un término adicional. En el análisis se evalúa en $T=T_{\mathrm{exp}}$.
 
 \subsection{Temperatura de equilibrio entre agua y hielo}
 Una masa $m_a$ de agua y el calorímetro, inicialmente a la misma temperatura $T_a$, ceden energía al hielo. Al combinar las Ecs.~\eqref{eq:calor_sensible}, \eqref{eq:capacidad} y \eqref{eq:calor_hielo} con la conservación de energía, resulta

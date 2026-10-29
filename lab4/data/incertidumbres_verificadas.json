@@ -1,0 +1,37 @@
+{
+  "hipotesis": {
+    "Th_C": 0,
+    "delta_Th_C": 0,
+    "c_cal_g_C": 1,
+    "Lf_cal_g": 80
+  },
+  "calibracion": {
+    "C_cal_C": 51.20000000000002,
+    "delta_C_cal_C": 208.35000000000002
+  },
+  "hielo": {
+    "Q_cal": 626.2,
+    "delta_Q_cal": 16.3,
+    "incertidumbre_relativa_porcentaje": 2.6030022357074416
+  },
+  "con_calorimetro": {
+    "T_C": 20.41578654808227,
+    "contribuciones_C": {
+      "ma": 0.0009961682745741327,
+      "mh": 0.0558175578366216,
+      "Ta": 0.9655364091161757,
+      "Ccal": 4.151033200150412
+    },
+    "delta_T_C": 5.173383335377784
+  },
+  "sin_calorimetro": {
+    "T_C": 18.989898989898993,
+    "contribuciones_C": {
+      "ma": 0.0019464261888504303,
+      "mh": 0.07691522843037996,
+      "Ta": 0.9518259518259519,
+      "Ccal": 0.0
+    },
+    "delta_T_C": 1.0306876064451822
+  }
+}

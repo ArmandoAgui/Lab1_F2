@@ -32,7 +32,7 @@ En esta primera parte se realizaron tres ensayos para determinar la capacidad ca
 
 \textbf{Parte II. Equilibrio térmico entre el agua y el hielo.}
 
-En esta parte se registraron las masas y temperaturas del agua y del hielo antes y después del intercambio térmico. La masa efectiva del hielo se obtuvo descontando la masa del papel utilizado para manipularlo.
+En esta parte se registraron las masas de agua y hielo, la temperatura inicial del agua y la temperatura final del sistema. La temperatura inicial del hielo se fijó por la hipótesis de la Ec.~\eqref{eq:hipotesis_temperatura_hielo}. La masa efectiva del hielo se obtuvo descontando la masa del papel utilizado para manipularlo.
 
 \begin{table}[H]
     \centering
@@ -40,14 +40,14 @@ En esta parte se registraron las masas y temperaturas del agua y del hielo antes
     \label{tab:datos_hielo}
     \begin{tabular}{lcc}
         \toprule
-        Magnitud & Valor medido & Incertidumbre \\
+        Magnitud & Valor & Incertidumbre \\
         \midrule
         Masa de agua, $m_a$ (g) & 122.5 & $\pm 0.05$ \\
         Temperatura inicial del agua, $T_a$ ($^\circ$C) & 24 & $\pm 1$ \\
         Masa de hielo medida, $m'_h$ (g) & 7.0 & $\pm 0.05$ \\
         Masa del papel, $m_p$ (g) & 0.8 & $\pm 0.05$ \\
         Masa efectiva de hielo, $m_h$ (g) & 6.2 & $\pm 0.10$ \\
-        Temperatura inicial del hielo, $T_h$ ($^\circ$C) & 0 & $\pm 1$ \\
+        Temperatura inicial del hielo, $T_h$ ($^\circ$C) & 0 & Fijo por modelo \\
         Temperatura experimental, $T_{\mathrm{exp}}$ ($^\circ$C) & 21 & $\pm 1$ \\
         \bottomrule
     \end{tabular}
@@ -170,12 +170,12 @@ Con $c_a=1\,\mathrm{cal}/(\mathrm{g}\cdot{}^{\circ}\mathrm{C})$, $L_f=80\,\mathr
     Q_{\mathrm{cal}}&=51.2(21-24)=-153.6\,\mathrm{cal}
 \end{align}
 
-Para estimar las incertidumbres se aplicó el criterio conservador de suma de incertidumbres absolutas. En el caso del calor absorbido por el hielo se consideró:
+Para estimar las incertidumbres se aplicó el criterio conservador de suma de incertidumbres absolutas. En el caso del calor absorbido por el hielo se adoptó $\Delta T_h=0$ por la hipótesis del modelo y se consideró:
 
 \begin{equation}
     \begin{split}
     \Delta Q_h={}&[L_f+c_a(T_{\mathrm{exp}}-T_h)]\Delta m_h\\
-      &+m_hc_a(\Delta T_{\mathrm{exp}}+\Delta T_h).
+      &+m_hc_a\Delta T_{\mathrm{exp}}.
     \end{split}
     \label{eq:incertidumbre_calor_hielo}
 \end{equation}
@@ -184,7 +184,7 @@ Al sustituir las incertidumbres instrumentales y los valores medidos en la Ec.~\
 \begin{equation}
     \begin{split}
       \Delta Q_h={}&[80+1(21-0)](0.10)\\
-                  &+6.2(1)(1+1)=22.5\,\mathrm{cal}.
+                  &+6.2(1)=16.3\,\mathrm{cal}.
     \end{split}
     \label{eq:resultado_incertidumbre_calor_hielo}
 \end{equation}
@@ -202,7 +202,7 @@ Para este cálculo se supone que $L_f$ es un valor conocido sin incertidumbre si
         \midrule
         Calor del agua, $Q_a$ (cal) & $-367.5$ & $\pm245.2$ \\
         \addlinespace
-        Calor absorbido por el hielo, $Q_h$ (cal) & $626.2$ & $\pm22.5$ \\
+        Calor absorbido por el hielo, $Q_h$ (cal) & $626.2$ & $\pm16.3$ \\
         \addlinespace
         Calor del calorímetro, $Q_{\mathrm{cal}}$ (cal) & $-153.6$ & $\pm727.5$ \\
         \addlinespace
@@ -296,7 +296,21 @@ Al despreciar la capacidad calorífica del calorímetro se aplicó la Ec.~\eqref
     \approx18.99\,^\circ\mathrm{C}
 \end{equation}
 
-Las incertidumbres estimadas para estas temperaturas son, respectivamente, $\pm5.17\,^\circ\mathrm{C}$ y $\pm1.03\,^\circ\mathrm{C}$. La incertidumbre de la primera es elevada debido a la incertidumbre obtenida para la capacidad calorífica del calorímetro. \textit{Estos valores reportados requieren revisar el tratamiento de $T_h$: se reproducen aproximadamente al omitir su contribución, aunque la Tabla~\ref{tab:datos_hielo} declara $\Delta T_h=1\,{}^{\circ}\mathrm{C}$. Se conservan provisionalmente hasta aclarar el tratamiento de esta incertidumbre.}
+Las incertidumbres se calcularon derivando la expresión completa de la Ec.~\eqref{eq:temperatura_teorica}. Con $A=m_ac_a+C_{\mathrm{cal}}$, $D=A+m_hc_a$ y $\Delta T_h=0$, se utilizó
+\begin{equation}
+  \begin{split}
+    \Delta T_{\mathrm{teo}}={}&\frac{c_a|T_a-T_{\mathrm{teo}}|}{D}\Delta m_a\\
+    &+\frac{|c_a(T_h-T_{\mathrm{teo}})-L_f|}{D}\Delta m_h\\
+    &+\frac{A}{D}\Delta T_a
+      +\frac{|T_a-T_{\mathrm{teo}}|}{D}\Delta C_{\mathrm{cal}}.
+  \end{split}
+  \label{eq:incertidumbre_temperatura_teorica}
+\end{equation}
+Cada variable aparece una sola vez en la propagación: no se tratan como independientes las apariciones de las mismas masas o de $C_{\mathrm{cal}}$ en el numerador y el denominador. La calibración procede de lecturas de la Parte I distintas de las temperaturas de la Parte II. Para $m_h=m'_h-m_p$, la suma de las contribuciones de ambas pesadas equivale a usar $\Delta m_h=0.10\,\mathrm{g}$. Se toman $c_a$, $L_f$ y $T_h$ como constantes del modelo.
+
+Para la calibración se verificó la propagación directa de $C_{\mathrm{cal}}=m_2c_a(T-T_2)/(T_1-T)-m_1c_a$, con sus cinco entradas medidas. Se obtuvo $\Delta C_{\mathrm{cal}}=208.35\,\mathrm{cal}/{}^{\circ}\mathrm{C}$ antes del redondeo, coherente con los $208.4\,\mathrm{cal}/{}^{\circ}\mathrm{C}$ reportados. Esta verificación evita asignar independencia a los calores intermedios y a las temperaturas que los definen.
+
+Usando los valores sin redondear, las contribuciones de $m_a$, $m_h$, $T_a$ y $C_{\mathrm{cal}}$ a la incertidumbre teórica con calorímetro fueron, respectivamente, $0.0010$, $0.0558$, $0.9655$ y $4.1510\,{}^{\circ}\mathrm{C}$. Su suma fue $5.1734\,{}^{\circ}\mathrm{C}$, que redondea a $5.17\,{}^{\circ}\mathrm{C}$. Para el modelo sin calorímetro se fijaron $C_{\mathrm{cal}}=0$ y $\Delta C_{\mathrm{cal}}=0$; las contribuciones fueron $0.0019$, $0.0769$ y $0.9518\,{}^{\circ}\mathrm{C}$, con suma $1.0307\,{}^{\circ}\mathrm{C}\approx1.03\,{}^{\circ}\mathrm{C}$. Por tanto, se conservan las incertidumbres de la Tabla~\ref{tab:resultados_calculados}. Su interpretación sigue limitada por la inestabilidad de la calibración descrita en el marco teórico.
 
 La discrepancia entre la temperatura experimental y cada predicción se cuantificó con el error porcentual de la Ec.~\eqref{eq:error_porcentual}, utilizando las temperaturas teóricas sin redondear.
 
