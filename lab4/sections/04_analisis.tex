@@ -8,7 +8,7 @@
 
 \textbf{Parte I. Determinación de la capacidad calorífica del calorímetro.}
 
-En esta primera parte se realizaron tres ensayos para determinar la capacidad calorífica del calorímetro mediante el intercambio de calor entre dos cantidades de agua a diferentes temperaturas. Las masas se midieron con una incertidumbre de $\Delta m=\pm 0.05\,\mathrm{g}$ y las temperaturas con una incertidumbre de $\Delta T=\pm 1\,^\circ\mathrm{C}$, según las indicaciones proporcionadas durante la práctica.
+En esta primera parte se realizaron tres ensayos para determinar la capacidad calorífica del calorímetro mediante el intercambio de calor entre dos cantidades de agua a diferentes temperaturas. Las masas se midieron con una incertidumbre de $\Delta m=0.05\,\mathrm{g}$ y las temperaturas con una incertidumbre de $\Delta T=1\,^\circ\mathrm{C}$, según las indicaciones proporcionadas durante la práctica.
 
 \begin{table}[H]
     \centering
@@ -67,17 +67,7 @@ En esta parte se registraron las masas y temperaturas del agua y del hielo antes
 
 \subsubsection{Cálculo de los calores intercambiados}
 
-Considerando el calor específico del agua como $c_a=1\,\mathrm{cal/(g\,^\circ C)}$, los calores intercambiados por las dos cantidades de agua se calcularon mediante:
-
-\begin{equation}
-    Q_1=m_1c_a(T-T_1)
-    \label{eq:calor_agua1}
-\end{equation}
-
-\begin{equation}
-    Q_2=m_2c_a(T-T_2)
-    \label{eq:calor_agua2}
-\end{equation}
+Los calores intercambiados por las dos cantidades de agua se calcularon con las Ecs.~\eqref{eq:calor_agua1} y \eqref{eq:calor_agua2}, tomando $c_a=1\,\mathrm{cal}/(\mathrm{g}\cdot{}^{\circ}\mathrm{C})$.
 
 Para estimar las incertidumbres se utilizó una propagación conservadora por suma de incertidumbres absolutas. Para una expresión de la forma $Q=mc_a(T-T_i)$, se empleó:
 
@@ -110,20 +100,7 @@ El signo de cada calor indica si el agua pierde o gana energía térmica. En el 
 
 \subsubsection{Determinación de la capacidad calorífica}
 
-Suponiendo que el sistema está térmicamente aislado, el balance de energía se expresa como:
-
-\begin{equation}
-    Q_1+Q_2+Q_{\mathrm{cal}}=0
-    \label{eq:balance_calorimetro}
-\end{equation}
-
-Como el calor intercambiado por el calorímetro se representa mediante $Q_{\mathrm{cal}}=C_{\mathrm{cal}}(T-T_1)$, se obtiene:
-
-\begin{equation}
-    C_{\mathrm{cal}}=
-    -\frac{Q_1+Q_2}{T-T_1}
-    \label{eq:capacidad_calorimetro}
-\end{equation}
+Se aplicó el balance de energía de la Ec.~\eqref{eq:balance_calorimetro} y se determinó la capacidad calorífica con la Ec.~\eqref{eq:capacidad_calorimetro}, suponiendo aislamiento térmico y una temperatura inicial del calorímetro igual a $T_1$.
 
 En los ensayos 1 y 2, la temperatura final registrada coincide con la temperatura inicial del agua correspondiente ($T=T_1$). Por tanto, el denominador de la ecuación \ref{eq:capacidad_calorimetro} es cero y no es posible calcular la capacidad calorífica a partir de esos ensayos.
 
@@ -132,7 +109,7 @@ Para el tercer ensayo, se obtiene:
 \begin{equation}
     C_{\mathrm{cal}}=
     -\frac{-175.2+277.6}{22-24}
-    =51.2\,\mathrm{cal/^\circ C}
+    =51.2\,\mathrm{cal}/{}^{\circ}\mathrm{C}
 \end{equation}
 
 Aplicando el mismo criterio conservador de propagación de incertidumbres:
@@ -145,12 +122,12 @@ Aplicando el mismo criterio conservador de propagación de incertidumbres:
     \label{eq:incertidumbre_capacidad}
 \end{equation}
 
-se obtiene una incertidumbre aproximada de $208.4\,\mathrm{cal/^\circ C}$. En consecuencia, el resultado del único ensayo calculable es:
+se obtiene una incertidumbre aproximada de $208.4\,\mathrm{cal}/{}^{\circ}\mathrm{C}$. En consecuencia, el resultado del único ensayo calculable es:
 
 \begin{equation}
     \boxed{
     C_{\mathrm{cal}}=(51.2\pm208.4)\,
-    \mathrm{cal/^\circ C}
+    \mathrm{cal}/{}^{\circ}\mathrm{C}
     }
     \label{eq:resultado_capacidad}
 \end{equation}
@@ -175,12 +152,7 @@ Considerando $\Delta m_h=0.10\,\mathrm{g}$, el calor intercambiado por el agua i
     \label{eq:calor_agua_ambiente}
 \end{equation}
 
-El hielo absorbe energía para fundirse y para que el agua resultante alcance la temperatura final. Por ello, su calor absorbido se calculó como:
-
-\begin{equation}
-    Q_h=m_hL_f+m_hc_a(T_{\mathrm{exp}}-T_h)
-    \label{eq:calor_hielo}
-\end{equation}
+El calor absorbido por el hielo se calculó con la Ec.~\eqref{eq:calor_hielo}, evaluada en $T=T_{\mathrm{exp}}$, que incluye su fusión y el calentamiento del agua resultante.
 
 Finalmente, el calor intercambiado por el calorímetro se estimó utilizando el valor central obtenido en la primera parte:
 
@@ -190,7 +162,7 @@ Finalmente, el calor intercambiado por el calorímetro se estimó utilizando el 
     \label{eq:calor_del_calorimetro}
 \end{equation}
 
-Con $c_a=1\,\mathrm{cal/(g\,^\circ C)}$, $L_f=80\,\mathrm{cal/g}$ y las mediciones de la práctica, se obtuvieron los siguientes valores centrales:
+Con $c_a=1\,\mathrm{cal}/(\mathrm{g}\cdot{}^{\circ}\mathrm{C})$, $L_f=80\,\mathrm{cal/g}$ y las mediciones de la práctica, se obtuvieron los siguientes valores centrales:
 
 \begin{align}
     Q_a&=122.5(21-24)=-367.5\,\mathrm{cal}\\
@@ -201,10 +173,14 @@ Con $c_a=1\,\mathrm{cal/(g\,^\circ C)}$, $L_f=80\,\mathrm{cal/g}$ y las medicion
 Para estimar las incertidumbres se aplicó el criterio conservador de suma de incertidumbres absolutas. En el caso del calor absorbido por el hielo se consideró:
 
 \begin{equation}
-    \Delta Q_h=(L_f+T_{\mathrm{exp}}-T_h)\Delta m_h
-    +m_h(\Delta T_{\mathrm{exp}}+\Delta T_h)
+    \begin{split}
+    \Delta Q_h={}&[L_f+c_a(T_{\mathrm{exp}}-T_h)]\Delta m_h\\
+      &+m_hc_a(\Delta T_{\mathrm{exp}}+\Delta T_h).
+    \end{split}
     \label{eq:incertidumbre_calor_hielo}
 \end{equation}
+
+\textit{Nota de revisión: se restituyeron los factores $c_a$ para mantener la consistencia dimensional. Con las incertidumbres declaradas, la Ec.~\eqref{eq:incertidumbre_calor_hielo} produce $22.5\,\mathrm{cal}$, frente a los $16.3\,\mathrm{cal}$ consignados en la tabla. Se conserva el valor reportado como pendiente de revisión, sin modificar los resultados numéricos.}
 
 Para este cálculo se supone que $L_f$ es un valor conocido sin incertidumbre significativa. Los resultados calculados se resumen en la Tabla \ref{tab:resultados_calculados}.
 
@@ -293,14 +269,7 @@ La Figura \ref{fig:comparacion_temperaturas} compara la temperatura experimental
 \label{subsec:comparacion_teorica}
 % =========================================================
 
-La temperatura teórica de equilibrio se obtuvo a partir del balance de energía entre el agua, el hielo y el calorímetro. Considerando la capacidad calorífica del calorímetro, la expresión utilizada fue:
-
-\begin{equation}
-    T_{\mathrm{teo}}=
-    \frac{m_ac_aT_a+C_{\mathrm{cal}}T_a-m_hL_f}
-    {c_a(m_a+m_h)+C_{\mathrm{cal}}}
-    \label{eq:temperatura_teorica}
-\end{equation}
+La temperatura teórica de equilibrio se obtuvo con la Ec.~\eqref{eq:temperatura_teorica}, que considera la capacidad calorífica del calorímetro, adoptando $T_h=0\,{}^{\circ}\mathrm{C}$.
 
 Sustituyendo los valores medidos y utilizando el valor central de la capacidad calorífica obtenido en la primera parte:
 
@@ -311,16 +280,7 @@ Sustituyendo los valores medidos y utilizando el valor central de la capacidad c
     \approx20.42\,^\circ\mathrm{C}
 \end{equation}
 
-Si se desprecia la capacidad calorífica del calorímetro, la expresión se reduce a:
-
-\begin{equation}
-    T_{\mathrm{teo},0}=
-    \frac{m_ac_aT_a-m_hL_f}
-    {c_a(m_a+m_h)}
-    \label{eq:temperatura_sin_calorimetro}
-\end{equation}
-
-Por tanto:
+Al despreciar la capacidad calorífica del calorímetro se aplicó la Ec.~\eqref{eq:temperatura_sin_calorimetro}:
 
 \begin{equation}
     T_{\mathrm{teo},0}=
@@ -329,16 +289,9 @@ Por tanto:
     \approx18.99\,^\circ\mathrm{C}
 \end{equation}
 
-Las incertidumbres estimadas para estas temperaturas son, respectivamente, $\pm5.17\,^\circ\mathrm{C}$ y $\pm1.03\,^\circ\mathrm{C}$. La incertidumbre de la primera es elevada debido a la incertidumbre obtenida para la capacidad calorífica del calorímetro.
+Las incertidumbres estimadas para estas temperaturas son, respectivamente, $\pm5.17\,^\circ\mathrm{C}$ y $\pm1.03\,^\circ\mathrm{C}$. La incertidumbre de la primera es elevada debido a la incertidumbre obtenida para la capacidad calorífica del calorímetro. \textit{Estos valores reportados requieren revisar el tratamiento de $T_h$: se reproducen aproximadamente al omitir su contribución, aunque la Tabla~\ref{tab:datos_hielo} declara $\Delta T_h=1\,{}^{\circ}\mathrm{C}$. Se conservan provisionalmente hasta aclarar el tratamiento de esta incertidumbre.}
 
-Para cuantificar la discrepancia entre la temperatura experimental y cada predicción teórica se calculó el error porcentual mediante:
-
-\begin{equation}
-    E_{\%}=
-    \frac{|T_{\mathrm{exp}}-T_{\mathrm{teo}}|}
-    {|T_{\mathrm{teo}}|}\times100
-    \label{eq:error_porcentual}
-\end{equation}
+La discrepancia entre la temperatura experimental y cada predicción se cuantificó con el error porcentual de la Ec.~\eqref{eq:error_porcentual}, utilizando las temperaturas teóricas sin redondear.
 
 Al considerar el calorímetro:
 

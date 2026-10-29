@@ -1,10 +1,106 @@
 \section{Marco teórico}
-\textit{Pendiente: desarrollar los conceptos, modelos y ecuaciones que sustentan la práctica. Definir los símbolos, las unidades y las condiciones de validez de cada modelo.}
+\label{sec:marco_teorico}
 
-% Ejemplo de estructura (sustituir por una ecuación de la práctica):
-% \begin{equation}
-%   y = mx + b
-%   \label{eq:modelo}
-% \end{equation}
-% Referencia en el texto: Ec.~\eqref{eq:modelo}.
-% Cita bibliográfica: \cite{clave_de_la_fuente}.
+\subsection{Calor, temperatura y capacidad calorífica}
+La temperatura $T$ caracteriza el estado térmico de un cuerpo, mientras que el calor $Q$ es energía transferida debido a una diferencia de temperatura \cite{serway}. Sin cambio de fase y con calor específico constante, el calor intercambiado por una masa $m$ entre las temperaturas $T_i$ y $T_f$ es
+\begin{equation}
+  Q=mc_a(T_f-T_i).
+  \label{eq:calor_sensible}
+\end{equation}
+Se adopta $Q>0$ para energía absorbida y $Q<0$ para energía cedida. Las masas se expresan en gramos, las temperaturas en grados Celsius y los calores en calorías. Para el agua se utiliza $c_a=1\,\mathrm{cal}/(\mathrm{g}\cdot{}^{\circ}\mathrm{C})$, el calor específico representado por $c$ en la formulación general.
+
+La capacidad calorífica del calorímetro, $C_{\mathrm{cal}}$, relaciona su calor intercambiado con la variación de temperatura:
+\begin{equation}
+  Q_{\mathrm{cal}}=C_{\mathrm{cal}}(T_f-T_i).
+  \label{eq:capacidad}
+\end{equation}
+Se expresa en $\mathrm{cal}/{}^{\circ}\mathrm{C}$ y representa la respuesta térmica conjunta del recipiente y de los componentes que participan en el intercambio, sin requerir sus masas y calores específicos individuales.
+
+\subsection{Transferencia de calor y calibración del calorímetro}
+En la aproximación de un sistema térmicamente aislado, sin trabajo apreciable, la conservación de energía requiere \cite{serway}
+\begin{equation}
+  \sum_i Q_i=0.
+  \label{eq:conservacion}
+\end{equation}
+Para calibrar el calorímetro se mezclan una masa $m_1$ de agua a $T_1$ y una masa $m_2$ de agua fría a $T_2<T_1$. Se supone que el calorímetro está inicialmente a $T_1$ y todos los componentes alcanzan una temperatura común $T$. Los intercambios de las porciones de agua son
+\begin{equation}
+    Q_1=m_1c_a(T-T_1)
+    \label{eq:calor_agua1}
+\end{equation}
+\begin{equation}
+    Q_2=m_2c_a(T-T_2)
+    \label{eq:calor_agua2}
+\end{equation}
+
+El calorímetro intercambia $Q_{\mathrm{cal}}=C_{\mathrm{cal}}(T-T_1)$. El balance y su despeje son
+\begin{equation}
+    Q_1+Q_2+Q_{\mathrm{cal}}=0
+    \label{eq:balance_calorimetro}
+\end{equation}
+\begin{equation}
+    C_{\mathrm{cal}}=
+    -\frac{Q_1+Q_2}{T-T_1}
+    \label{eq:capacidad_calorimetro}
+\end{equation}
+
+El despeje equivale a $C_{\mathrm{cal}}=m_2c_a(T-T_2)/(T_1-T)-m_1c_a$ y solo puede evaluarse si $T\ne T_1$. Una diferencia comparable con su incertidumbre vuelve inestable la determinación. El símbolo $\overline{C}_{\mathrm{cal}}$ se reserva para el promedio de varias determinaciones válidas. En este informe solo el tercer ensayo permite evaluar el despeje; se emplea $C_{\mathrm{cal}}$, sin presentarlo como un promedio de tres ensayos.
+
+\subsection{Cambio de fase y calor latente de fusión}
+Durante la fusión en equilibrio a presión constante, el hielo absorbe energía sin cambiar su temperatura. El calor latente se expresa como \cite{serway}
+\begin{equation}
+  Q_{\mathrm{fus}}=m_hL_f,
+  \label{eq:latente}
+\end{equation}
+donde $m_h$ es la masa efectiva de hielo y $L_f=80\,\mathrm{cal}/\mathrm{g}$ es el calor latente de fusión adoptado. Para hielo de agua con la humedad superficial retirada, inicialmente a la temperatura de fusión $T_h=0\,{}^{\circ}\mathrm{C}$, el calor total incluye la fusión y el calentamiento del agua resultante:
+\begin{equation}
+    Q_h=m_hL_f+m_hc_a(T-T_h)
+    \label{eq:calor_hielo}
+\end{equation}
+
+Aquí $T_h$ representa la temperatura de fusión. La expresión no describe hielo inicialmente por debajo de $0\,{}^{\circ}\mathrm{C}$, cuyo calentamiento previo requeriría un término adicional. En el análisis se evalúa en $T=T_{\mathrm{exp}}$.
+
+\subsection{Temperatura de equilibrio entre agua y hielo}
+Una masa $m_a$ de agua y el calorímetro, inicialmente a la misma temperatura $T_a$, ceden energía al hielo. Al combinar las Ecs.~\eqref{eq:calor_sensible}, \eqref{eq:capacidad} y \eqref{eq:calor_hielo} con la conservación de energía, resulta
+\begin{equation}
+  \begin{split}
+    T_{\mathrm{teo}}&=\frac{A T_a+m_h(c_aT_h-L_f)}{A+m_hc_a},\\
+    A&=m_ac_a+C_{\mathrm{cal}}.
+  \end{split}
+  \label{eq:temperatura_teorica}
+\end{equation}
+
+La magnitud auxiliar $A$ es la capacidad calorífica conjunta del agua inicial y del calorímetro. Al sustituirla, el numerador es $(m_ac_a+C_{\mathrm{cal}})T_a+m_hc_aT_h-m_hL_f$ y el denominador es $(m_a+m_h)c_a+C_{\mathrm{cal}}$. Todos los términos del numerador tienen unidades de energía y el denominador tiene unidades de capacidad calorífica. Para $T_h=0\,{}^{\circ}\mathrm{C}$ se recupera la expresión de los cálculos. Al despreciar el calorímetro y adoptar esa misma temperatura de fusión, se obtiene
+\begin{equation}
+    T_{\mathrm{teo},0}=
+    \frac{m_ac_aT_a-m_hL_f}
+    {c_a(m_a+m_h)}
+    \label{eq:temperatura_sin_calorimetro}
+\end{equation}
+
+La comparación con la temperatura experimental se realiza mediante
+\begin{equation}
+    E_{\%}=
+    \frac{|T_{\mathrm{exp}}-T_{\mathrm{teo}}|}
+    {|T_{\mathrm{teo}}|}\times100
+    \label{eq:error_porcentual}
+\end{equation}
+
+Este indicador reproduce la convención del informe con temperaturas en grados Celsius; depende del origen de la escala y no constituye por sí solo una validación física del modelo.
+
+\subsection{Propagación conservadora de incertidumbres}
+La propagación se fundamenta en la aproximación diferencial de una función de variables medidas \cite{taylor}. Para mantener el criterio del análisis, se suman las contribuciones absolutas de primer orden:
+\begin{equation}
+  \Delta f\approx\sum_k\left|\frac{\partial f}{\partial x_k}\right|\Delta x_k.
+  \label{eq:propagacion}
+\end{equation}
+Las cantidades $\Delta x_k$ son magnitudes no negativas, expresadas en las unidades de cada variable. Este procedimiento estima una envolvente lineal conservadora y no una desviación estándar obtenida por suma en cuadratura. En particular,
+\begin{align}
+  \Delta(T-T_1)&=\Delta T+\Delta T_1,\label{eq:incertidumbre_diferencia}\\
+  \Delta m_h&=\Delta m'_h+\Delta m_p.\label{eq:incertidumbre_masa_hielo}
+\end{align}
+Para iguales incertidumbres instrumentales, se reducen a $2\Delta T$ y $2\Delta m$, respectivamente. Se consideran $c_a$ y $L_f$ constantes sin incertidumbre significativa.
+
+La propagación lineal pierde fiabilidad cuando el intervalo del denominador de un cociente alcanza cero, como ocurre con $T-T_1$ en la calibración. La incertidumbre reportada de $C_{\mathrm{cal}}$ es, por tanto, una estimación aproximada; no establece una cota rigurosa ni una calibración precisa. La reutilización de temperaturas en magnitudes intermedias también exige cautela al interpretar sus incertidumbres como independientes.
+
+\subsection{Condiciones de validez}
+El modelo requiere intercambio despreciable con el entorno, evaporación no significativa, equilibrio térmico final y capacidades caloríficas aproximadamente constantes. Supone hielo de agua a la temperatura de fusión, sin agua superficial apreciable, y fusión completa. Una predicción $T_{\mathrm{teo}}>0\,{}^{\circ}\mathrm{C}$ debe ser compatible con la energía disponible para fundir todo el hielo; si persiste hielo, corresponde un balance con fusión parcial. Estas hipótesis delimitan la interpretación de las mediciones y de sus discrepancias con el modelo ideal.
