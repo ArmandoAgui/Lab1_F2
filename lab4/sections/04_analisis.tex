@@ -180,7 +180,14 @@ Para estimar las incertidumbres se aplicó el criterio conservador de suma de in
     \label{eq:incertidumbre_calor_hielo}
 \end{equation}
 
-\textit{Nota de revisión: se restituyeron los factores $c_a$ para mantener la consistencia dimensional. Con las incertidumbres declaradas, la Ec.~\eqref{eq:incertidumbre_calor_hielo} produce $22.5\,\mathrm{cal}$, frente a los $16.3\,\mathrm{cal}$ consignados en la tabla. Se conserva el valor reportado como pendiente de revisión, sin modificar los resultados numéricos.}
+Al sustituir las incertidumbres instrumentales y los valores medidos en la Ec.~\eqref{eq:incertidumbre_calor_hielo}, se obtiene:
+\begin{equation}
+    \begin{split}
+      \Delta Q_h={}&[80+1(21-0)](0.10)\\
+                  &+6.2(1)(1+1)=22.5\,\mathrm{cal}.
+    \end{split}
+    \label{eq:resultado_incertidumbre_calor_hielo}
+\end{equation}
 
 Para este cálculo se supone que $L_f$ es un valor conocido sin incertidumbre significativa. Los resultados calculados se resumen en la Tabla \ref{tab:resultados_calculados}.
 
@@ -195,7 +202,7 @@ Para este cálculo se supone que $L_f$ es un valor conocido sin incertidumbre si
         \midrule
         Calor del agua, $Q_a$ (cal) & $-367.5$ & $\pm245.2$ \\
         \addlinespace
-        Calor absorbido por el hielo, $Q_h$ (cal) & $626.2$ & $\pm16.3$ \\
+        Calor absorbido por el hielo, $Q_h$ (cal) & $626.2$ & $\pm22.5$ \\
         \addlinespace
         Calor del calorímetro, $Q_{\mathrm{cal}}$ (cal) & $-153.6$ & $\pm727.5$ \\
         \addlinespace
